@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="main-container">
+        <header id="header">
+            <img id="logo" src="images/FluitendeFietserLogo Transparant.png"></img>
+            <label id="header-title">De Fluitende Fietser</label>
+            <div class="search-container">
+                <form action="/action_page.php">
+                  <input type="text" placeholder="Search.." name="search">
+                  <button type="submit"><img src="images/search.png"></img></button>
+                </form>
+              </div>
+        </header>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pages/over-ons.html">Fietsen</a></li>
+                <li><a href="/pages/assortiment.html">Verhuur</a></li>
+                <li><a href="/pages/assortiment.html">Contact</a></li>
+                <li><a href="/pages/assortiment.html">Over ons</a></li>
+                <li><button id="add" onclick="add()">add</button></li>
+                <li><button id="remove" onclick="remove()">remove</button></li>
+            </ul>
+        </nav>
+        <div id="content-container">
+            <div id="shop-container">
+                <button class="shop-button" price="25">
+                    <img src="images/fietsen/Gazelle_CityGo_C7.jpg"></img>
+                    <label>Gazelle CityGo C7</label>
+                </button>
+                <button class="shop-button" price="30">
+                    <img src="images/fietsen/Gazelle_Orange_C7.jpg"></img>
+                    <label>Gazelle Orange C7</label>
+                </button>
+                <button class="shop-button" price="35">
+                    <img src="images/fietsen/Pelikaan_Carry_On_Lady.jpg"></img>
+                    <label>Pelikaan Carry On Laby</label>
+                </button>
+                <button class="shop-button" price="40">
+                    <img src="images/fietsen/Stella_Allegra_voorwielmotor.jpg"></img>
+                    <label>Stella Allegra voorwielmoter</label>
+                </button>
+            </div>
+            <div id="bigger-bike-container">
+                <div id="bike-image-container">
+                    <img id="bigger-bike" src="images/fietsen/Gazelle_CityGo_C7.jpg"></img>
+                </div>
+                <div id="bike-info-container">    
+                    <div id="bigger-bike-info">
+                        <label id="bigger-bike-name">Gazelle CityGo C7</label>
+                        <label id="bigger-bike-price">€25</label>
+                        <button id="bigger-bike-button">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+
+
+            <label id="KVK-Number">KVK: 88599665 | BTW NL999888492Z09</label>
+            <img id="driving-bike" src="images/fietser-nb.png"></img>
+        </footer>
+    </div>
+</body>
+</html>
