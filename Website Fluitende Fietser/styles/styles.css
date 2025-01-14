@@ -166,16 +166,20 @@ body {
     margin: 50px;
     display: none;
     align-items: center;
+    justify-content: space-between;
 }
 
 #bike-info-container {
-    width: 100%;
+    /* width: 100%; */
 }
 
 #bike-image-container {
     width: 45%;
+    border-radius: 20px;
+    border: 2px solid black;
     & img {
         width: 100%;
+        border-radius: 20px;
     }
 }
 
