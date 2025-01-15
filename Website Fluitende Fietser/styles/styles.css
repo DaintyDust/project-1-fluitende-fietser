@@ -53,14 +53,18 @@ html, body {
     font-size: 3.5rem; /* 56px; */
     margin-left: 20px;
 }
+/* input[type=search] {
+    -webkit-appearance: none;
+} */
+
 .search-container {
     align-content: center;
     width: fit-content;
     height: 36%;
     width: 45%;
     display: flex;
-    & input[type=text] {
-        height: calc(100% - 12px);
+    & input[type=search] {
+        /* height: calc(100% - 12px); */
         width: 100%;
         padding: 6px 6px 6px 12px;
         font-size: 1.0625rem; /* 17px */
@@ -70,6 +74,10 @@ html, body {
         border-radius: 12px 0px 0px 12px;
         &:focus {
             outline: 2px solid white;
+            &::-webkit-search-cancel-button {
+                opacity: 0.9;
+                pointer-events: all;
+            }
         }
         &:focus+button {
             /* outline: 2px solid white; */
@@ -78,6 +86,16 @@ html, body {
         &::placeholder {
             color: rgb(235, 235, 235);
           }
+        &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        height: 1em;
+        width: 1em;
+        border-radius: 50em;
+        background: url(../images/clear_input.svg) no-repeat 50% 50%;
+        background-size: contain;
+        opacity: 0;
+        pointer-events: none;
+        }
     }
     & button {
         height: 100%;
