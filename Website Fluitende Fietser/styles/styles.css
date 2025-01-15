@@ -1,6 +1,7 @@
-body {
+html, body {
     margin: 0px;
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 #main-container {
@@ -49,7 +50,7 @@ body {
 }
 #header-title {
     grid-area: title;
-    font-size: 56px;
+    font-size: 3.5rem; /* 56px; */
     margin-left: 20px;
 }
 .search-container {
@@ -65,7 +66,7 @@ body {
         height: calc(100% - 12px);
         width: 100%;
         padding: 6px 6px 6px 12px;
-        font-size: 17px;
+        font-size: 1.0625rem; /* 17px */
         border: none;
         background-color: #949494;
         color: white;
@@ -109,7 +110,7 @@ body {
         list-style: none;
         margin: 0px;
         padding:0px;
-        font-size: 32px;
+        font-size: 2rem; /* 32px */
         & li a {
             text-decoration: none;
             color: white;
@@ -124,7 +125,7 @@ body {
         transform: scaleX(1);
     }
     50% {
-        left: 96%; 
+        left: 96%;
         transform: scaleX(1);
     }
     50.01% {
@@ -174,7 +175,7 @@ body {
 }
 
 #bike-info-container {
-    width: 70%;
+    width: 100%;
     grid-column: 2;
     grid-row-start: 2;
     grid-row-end: 5;
@@ -186,7 +187,7 @@ body {
 }
 
 #bike-name {
-    font-size: 50px;
+    font-size: 3.125rem; /* 50px */
 }
 
 #close-bigger-bike {
@@ -199,8 +200,24 @@ body {
     color: white;
     border-radius: 14px;
     border: none;
-    font-size: xx-large;
+    font-size: 2rem; /* xx-large */
     grid-column: 3;
+}
+
+#bike-buy-button {
+    display: flex;
+    align-items: center;
+    background-color: #949494;
+    color: white;
+    border-radius: 14px;
+    border: none;
+    font-size: 2rem;
+    height: 50px;
+    width: fit-content;
+    & img {
+        height: 100%;
+        width: auto;
+    }
 }
 
 #bike-image-container {
@@ -232,6 +249,6 @@ body {
         border-radius: 25px;
     }
     & label {
-        font-size: 24px;
+        font-size: 1.5rem; /* 24px */
     }
 }
