@@ -58,10 +58,7 @@ html, body {
     width: fit-content;
     height: 36%;
     width: 45%;
-    & form {
-        height: 100%;
-        display: flex;
-    }
+    display: flex;
     & input[type=text] {
         height: calc(100% - 12px);
         width: 100%;
@@ -83,6 +80,7 @@ html, body {
           }
     }
     & button {
+        height: 100%;
         padding: 6px 10px;
         border-radius: 0px 12px 12px 0px;
         background: #949494;
@@ -155,8 +153,8 @@ html, body {
     justify-content: center;
     height: calc(100% - 100px); /*100%;*/
     margin: 50px;
-    grid-template-columns: auto auto auto; /*30% 30% 30%;*/
-    /* grid-template-rows: 30% 30% 30%; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 50px;
     z-index: 2;
 }
@@ -244,11 +242,15 @@ html, body {
     justify-content: space-around;
     & img {
         margin-inline: 32px;
-        width: 75%; /*calc(100% - 32px);*/
+        width: 70%; /*calc(100% - 32px);*/
         height: auto;
         border-radius: 25px;
     }
     & label {
         font-size: 1.5rem; /* 24px */
     }
+}
+
+.hidden {
+    display: none;
 }

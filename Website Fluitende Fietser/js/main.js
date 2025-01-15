@@ -10,6 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
         CloseBikeInfo();
     });
     
+    document.getElementById("search").addEventListener('input', e => {
+       
+        const search = e.target.value.toLowerCase();
+        
+        var children = document.getElementById("shop-container").children;
+        for (var i = 0; i < children.length; i++) {
+            var child = children[i];
+            const isVisible = child.innerText.toLowerCase().includes(search);
+            child.classList.toggle('hidden', !isVisible);
+        }
+    });
 });
 
 // const shopContainer = document.getElementById("shop-container");
