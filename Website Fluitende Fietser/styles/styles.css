@@ -167,10 +167,32 @@ body {
     display: none;
     align-items: center;
     justify-content: space-between;
+    grid-template: 
+            "bike info close" auto
+            "bike info info" 2ch
+            "bike info info" 1em / 20% 20px 1fr;
 }
 
 #bike-info-container {
-    /* width: 100%; */
+    width: 40%;
+}
+
+#bike-info {
+    display: flex;
+    flex-direction: column;
+}
+
+#close-bigger-bike {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #949494;
+    color: white;
+    border-radius: 14px;
+    border: none;
+    font-size: xx-large;
 }
 
 #bike-image-container {

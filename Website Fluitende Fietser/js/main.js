@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
             OpenBikeInfo(button);
         });
     });
+    document.getElementById("close-bigger-bike").addEventListener('click', () => {
+        CloseBikeInfo();
+    });
     
 });
 
@@ -14,9 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function OpenBikeInfo(button) {
     document.getElementById("shop-container").style.display = 'none';
-    document.getElementById("bigger-bike-container").style.display = 'flex';
+    document.getElementById("bigger-bike-container").style.display = 'grid';
 
 
+}
+
+function CloseBikeInfo() {
+    document.getElementById("shop-container").style.display = 'grid';
+    document.getElementById("bigger-bike-container").style.display = 'none';
 }
 
 function add() {
