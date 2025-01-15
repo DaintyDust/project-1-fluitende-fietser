@@ -31,7 +31,7 @@ function add() {
     const newbtn = document.createElement('button');
     newbtn.classList.add("shop-button");
     const newimg = document.createElement('img');
-    newimg.src = "images/fietsen/Stella_Allegra_voorwielmotor.jpg";
+    newimg.src = "../images/fietsen/Stella_Allegra_voorwielmotor.jpg";
     const newlabel = document.createElement('label');
     newlabel.innerHTML = "Stella Allegra voorwielmoter";
     
