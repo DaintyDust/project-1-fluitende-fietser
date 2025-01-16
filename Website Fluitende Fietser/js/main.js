@@ -61,8 +61,8 @@ function OpenBikeInfo(bikename, bikebrand, bikeprice, biketype, bikecolor, bikeg
     doc("shop-container").style.display = 'none';
     doc("bigger-bike-container").style.display = 'grid';
     doc("bike-name").innerHTML = bikename;
-    doc("bike-brand").innerHTML = bikebrand;
-    doc("bike-price").innerHTML = bikeprice;
+    doc("bike-brand").innerHTML = `Merk: ${bikebrand}`;
+    doc("bike-price").innerHTML = `€${bikeprice}`;
     doc("bike-type").innerHTML = biketype;
     doc("bike-color").innerHTML = bikecolor
     doc("bike-gender").innerHTML = bikegender;

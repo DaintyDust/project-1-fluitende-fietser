@@ -236,6 +236,11 @@ html, body {
 
 #bike-name {
     font-size: 3.125rem; /* 50px */
+    margin: 0;
+}
+#bike-brand {
+    font-size: 1.5rem; /* 24px */
+    margin: 0;
 }
 
 #close-bigger-bike {
