@@ -161,9 +161,29 @@ html, body {
 }
 
 #KVK-Number {
-    right: 0px;
-    bottom: 0px;
+    right: 10px;
+    bottom: 5px;
     position: absolute;
+}
+#Copyright {
+    bottom: 5px;
+    margin-left: 10px;
+    position: absolute;
+}
+#facebook-social {
+    background: transparent;
+    border: none;
+    padding: 0;
+    content: url(../images/facebook.png);
+}
+#about_us-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem; /* 24px */
+    margin-left: 10px;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 #shop-container {
