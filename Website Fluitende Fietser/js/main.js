@@ -21,6 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
             child.classList.toggle('hidden', !isVisible);
         }
     });
+
+
+   fetch("../assets/fietsen.txt")
+  .then((respnse) => respnse.text())
+  .then((text) => {
+    const bikes = text.split("\n");
+    for (const bike of bikes) {
+        // console.log(bike);
+        const [number, name, image] = bike.split(":");
+        console.log(name);
+        console.log(price);
+        console.log(image);
+    }
+
+
+   })
+  .catch((e) => console.error(e));
 });
 
 // const shopContainer = document.getElementById("shop-container");
@@ -32,10 +49,22 @@ function OpenBikeInfo(button) {
 
 
 }
-
 function CloseBikeInfo() {
     document.getElementById("shop-container").style.display = 'grid';
     document.getElementById("bigger-bike-container").style.display = 'none';
+}
+
+function addBike() {
+    const newbtn = document.createElement('button');
+    newbtn.classList.add("shop-button");
+    const newimg = document.createElement('img');
+    newimg.src = "../images/fietsen/Stella_Allegra_voorwielmotor.jpg";
+    const newlabel = document.createElement('label');
+    newlabel.innerHTML = "Stella Allegra voorwielmoter";
+    
+    newbtn.appendChild(newimg);
+    newbtn.appendChild(newlabel);
+    document.getElementById("shop-container").appendChild(newbtn);
 }
 
 function add() {
