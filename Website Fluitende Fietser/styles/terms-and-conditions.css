@@ -1,0 +1,23 @@
+body {
+    margin: 0px;
+    overflow-x: hidden;
+    font-size: 16px;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+#main-container {
+    grid-template:
+    "header header" 10%
+    "content content" 1fr
+    "footer footer" 10% / 1fr;
+}
+
+#nav-menu {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    width: 10%;
+    right: 0.9%;
+    top: 15.2%;
+}

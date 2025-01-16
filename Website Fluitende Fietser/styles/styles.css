@@ -176,7 +176,7 @@ html, body {
     padding: 0;
     content: url(../images/facebook.png);
 }
-#about_us-link {
+.footer-link {
     color: white;
     text-decoration: none;
     font-size: 1.5rem; /* 24px */
