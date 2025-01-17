@@ -1,12 +1,5 @@
 const doc = document.getElementById.bind(document);
 document.addEventListener("DOMContentLoaded", () => {
-
-    // document.querySelectorAll('.shop-button').forEach(button => {
-    //     button.addEventListener('click', () => {
-    //         console.log('Button clicked:');
-    //         OpenBikeInfo(button);
-    //     });
-    // });
     doc("close-bigger-bike").addEventListener('click', () => {
         CloseBikeInfo();
     });
