@@ -90,6 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
     if (SearchBtnMode) {
         doc("search-btn").addEventListener('click', SearchBikes);
+        doc("search").addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                SearchBikes();
+            }
+        });
     } else {
         doc("search").addEventListener('input', SearchBikes);
     }

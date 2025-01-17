@@ -40,6 +40,8 @@ html, body {
 #content-container {
     height: 100%;
     grid-area: content;
+    display: flex;
+    justify-content: center;
 }
 
 #logo {
@@ -52,6 +54,7 @@ html, body {
     grid-area: title;
     font-size: 3.5rem; /* 56px; */
     margin-left: 20px;
+    font-weight: bold;
 }
 /* input[type=search] {
     -webkit-appearance: none;
@@ -118,6 +121,7 @@ html, body {
     height: 20vh; /* 24%; *//*3.375%;*/
     background-color: #949494;
     border-bottom-right-radius: 20px;
+    overflow: hidden;
     & ul {
         display: flex;
         flex-direction: column;
@@ -127,10 +131,19 @@ html, body {
         margin: 0px;
         padding:0px;
         font-size: 2rem; /* 32px */
-        & li a {
-            text-decoration: none;
-            color: white;
+        & li {
             width: 100%;
+            & a {
+                display: block;
+                text-decoration: none;
+                color: white;
+                width: 100%;
+                text-align: center;
+            &:hover {
+                background-color: #7d7d7d;
+                box-shadow: 0 0px 8px 0px rgb(255 255 255 / 30%);
+            }
+            }
         }
     }
 }
@@ -212,7 +225,7 @@ html, body {
 #bigger-bike-container {
     height: calc(100% - 100px);
     width: calc(100% - 100px);
-    margin: 50px;
+    /* margin: 50px; */
     display: none;
     align-items: center;
     justify-content: space-between;
@@ -221,8 +234,9 @@ html, body {
 
     background-color: #f9f9f9;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.1); /* 0 4px 8px rgba(0, 0, 0, 0.1); */
     padding: 20px;
+    align-self: center;
 }
 
 #bike-info-container {
@@ -272,7 +286,7 @@ html, body {
 
     
     background-color: #ff4d4d;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     
     &:hover {
         background-color: #cc0000;
@@ -335,6 +349,8 @@ html, body {
     align-items: center;
     justify-content: space-around;
     cursor: pointer;
+    border: 2px solid #ddd;
+    text-align: center;
     & img {
         margin-inline: 32px;
         width: 70%; /*calc(100% - 32px);*/
