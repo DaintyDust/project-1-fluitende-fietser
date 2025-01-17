@@ -310,3 +310,8 @@ html, body {
 .hidden {
     display: none;
 }
+#about-us-title {
+    font-size: 2.0rem;
+    margin-left: 200px;
+    margin-top: 150px;
+}
