@@ -94,7 +94,7 @@ html, body {
         height: 1em;
         width: 1em;
         border-radius: 50em;
-        background: url(./images/clear_input.svg) no-repeat 50% 50%;
+        background: url(images/clear_input.svg) no-repeat 50% 50%;
         background-size: contain;
         opacity: 0;
         pointer-events: none;
@@ -190,7 +190,7 @@ html, body {
     position: absolute;
 }
 #facebook-social {
-    background: url(./images/facebook.png) no-repeat 50% 50%;
+    background: url(../images/facebook.png) no-repeat 50% 50%;
     background-size: contain;
     height: 50px;
     width: 50px;
