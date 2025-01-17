@@ -14,7 +14,7 @@ function SearchBikes() {
 }
 
 function LoadBikes() {
-    fetch("../assets/fietsen.txt")
+    fetch("./assets/fietsen.txt")
     .then((respnse) => respnse.text())
     .then((text) => {
         const bikes = text.split("\n");
@@ -46,7 +46,7 @@ function OpenBikeInfo(bikename, bikebrand, bikeprice, biketype, bikecolor, bikeg
     doc("bike-hand").innerHTML = `Isnieuw: ${isnew}`;
     doc("bike-code").innerHTML = `Bikecode: ${bikecode}`;
     doc("bike-commentary").innerHTML = `Opmerking: ${bikecommentary}`;
-    doc("bigger-bike-image").src = `../images/fietsen/${bikename}.jpg`;
+    doc("bigger-bike-image").src = `./images/fietsen/${bikename}.jpg`;
 }
 function CloseBikeInfo() {
     doc("shop-container").style.display = 'grid';
@@ -57,7 +57,7 @@ function addBike(bikename) {
     const newbtn = document.createElement('button');
     newbtn.classList.add("shop-button");
     const newimg = document.createElement('img');
-    newimg.src = `../images/fietsen/${bikename}.jpg`;
+    newimg.src = `./images/fietsen/${bikename}.jpg`;
     const newlabel = document.createElement('label');
     newlabel.innerHTML = bikename;
     
@@ -71,7 +71,7 @@ function add() {
     const newbtn = document.createElement('button');
     newbtn.classList.add("shop-button");
     const newimg = document.createElement('img');
-    newimg.src = "../images/fietsen/Allegra voorwielmotor.jpg";
+    newimg.src = "./images/fietsen/Allegra voorwielmotor.jpg";
     const newlabel = document.createElement('label');
     newlabel.innerHTML = "Stella Allegra voorwielmoter";
     
