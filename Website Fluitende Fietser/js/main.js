@@ -1,54 +1,37 @@
 const doc = document.getElementById.bind(document);
-document.addEventListener("DOMContentLoaded", () => {
-    doc("close-bigger-bike").addEventListener('click', () => {
-        CloseBikeInfo();
-    });
+
+const SearchBtnMode = true;
+
+function SearchBikes() {
+    const search = doc("search").value.toLowerCase();
     
-    doc("search").addEventListener('input', e => {
-       
-        const search = e.target.value.toLowerCase();
-        
-        var children = doc("shop-container").children;
-        for (var i = 0; i < children.length; i++) {
-            var child = children[i];
-            const isVisible = child.innerText.toLowerCase().includes(search);
-            child.classList.toggle('hidden', !isVisible);
-        }
-    });
-
-
-   fetch("../assets/fietsen.txt")
-  .then((respnse) => respnse.text())
-  .then((text) => {
-    const bikes = text.split("\n");
-    for (const bike of bikes) {
-        // console.log(bike);
-        const [number, bikename, drivetype, driveoffer, bikegender, biketype, bikebrand, isnew, bikecolor, bikeprice, bikecommentary] = bike.split(":");
-        console.log(`bikename: ${bikename}`); // Pelikaan Carry On Lady
-        console.log(`drivetype: ${drivetype}`); // elektrisch
-        console.log(`driveoffer: ${driveoffer}`); // geschikt voor zakelijk en prive
-        console.log(`bikegender: ${bikegender}`);  // dames
-        console.log(`biketype: ${biketype}`); // transport
-        console.log(`bikebrand: ${bikebrand}`); // Pelikaan
-        console.log(`isnew: ${isnew}`); // nieuw
-        console.log(`bikecolor: ${bikecolor}`); // zwart
-        console.log(`bikeprice: ${bikeprice}`); // 769,00
-        console.log(`bikecommentary: ${bikecommentary}`); // 28 Inch 53 cm 3V V-Brakes
-
-        const button = addBike(bikename);
-        button.addEventListener('click', () => {
-            console.log('Button clicked:');
-            OpenBikeInfo(bikename, bikebrand, bikeprice, biketype, bikecolor, bikegender, driveoffer, isnew, null, bikecommentary);
-        });
+    var children = doc("shop-container").children;
+    for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        const isVisible = child.innerText.toLowerCase().includes(search);
+        child.classList.toggle('hidden', !isVisible);
     }
+}
 
+function LoadBikes() {
+    fetch("../assets/fietsen.txt")
+    .then((respnse) => respnse.text())
+    .then((text) => {
+        const bikes = text.split("\n");
+        for (const bike of bikes) {
+            const [number, bikename, drivetype, driveoffer, bikegender, biketype, bikebrand, isnew, bikecolor, bikeprice, bikecommentary] = bike.split(":");
+            console.log(`bikename: ${bikename}, drivetype: ${drivetype}, driveoffer: ${driveoffer}, bikegender: ${bikegender}, biketype: ${biketype}, bikebrand: ${bikebrand}, isnew: ${isnew}, bikecolor: ${bikecolor}, bikeprice: ${bikeprice}, bikecommentary: ${bikecommentary}`);
+            // Pelikaan Carry On Lady : elektrisch : geschikt voor zakelijk en prive : dames : transport : Pelikaan : nieuw : zwart : 769,00 : 28 Inch 53 cm 3V V-Brakes
+            const button = addBike(bikename);
+            button.addEventListener('click', () => {
+                console.log('Button clicked:');
+                OpenBikeInfo(bikename, bikebrand, bikeprice, biketype, bikecolor, bikegender, driveoffer, isnew, null, bikecommentary);
+            });
+        }
+    })
+    .catch((e) => console.error(e));
+}
 
-   })
-  .catch((e) => console.error(e));
-});
-
-// const shopContainer = doc("shop-container");
-// const biggerBikeContainer = doc("bigger-bike-container");
 
 function OpenBikeInfo(bikename, bikebrand, bikeprice, biketype, bikecolor, bikegender, driveoffer, isnew, bikecode, bikecommentary) {
     doc("shop-container").style.display = 'none';
@@ -100,3 +83,14 @@ function add() {
 function remove() {
     doc("shop-container").children[0].remove();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    LoadBikes();
+    doc("close-bigger-bike").addEventListener('click', CloseBikeInfo);
+    
+    if (SearchBtnMode) {
+        doc("search-btn").addEventListener('click', SearchBikes);
+    } else {
+        doc("search").addEventListener('input', SearchBikes);
+    }
+});
