@@ -3,6 +3,18 @@ html, body {
     overflow-x: hidden;
     font-size: 16px;
 }
+* {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+#add {
+    position: fixed;
+    translate: 40px 10px;
+}
+#remove {
+    position: fixed;
+    translate: 30px 40px;
+}
 
 #main-container {
     height: 100vh;
@@ -66,6 +78,11 @@ html, body {
     height: 36%;
     width: 45%;
     display: flex;
+    border-radius: 12px;
+    &:has(input[type=search]:focus) {
+        outline: 2px solid white;
+        box-shadow: 0px 0px 8px 6px rgb(255 255 255 / 30%);
+    }
     & input[type=search] {
         /* height: calc(100% - 12px); */
         width: 100%;
@@ -76,28 +93,24 @@ html, body {
         color: white;
         border-radius: 12px 0px 0px 12px;
         &:focus {
-            outline: 2px solid white;
+            outline: none;
             &::-webkit-search-cancel-button {
                 opacity: 0.9;
                 pointer-events: all;
             }
         }
-        &:focus+button {
-            /* outline: 2px solid white; */
-            border-left: 2px solid white;
-        }
         &::placeholder {
             color: rgb(235, 235, 235);
           }
         &::-webkit-search-cancel-button {
-        -webkit-appearance: none;
-        height: 1em;
-        width: 1em;
-        border-radius: 50em;
-        background: url(images/clear_input.svg) no-repeat 50% 50%;
-        background-size: contain;
-        opacity: 0;
-        pointer-events: none;
+            -webkit-appearance: none;
+            height: 1em;
+            width: 1em;
+            border-radius: 50em;
+            background: url(images/clear_input.svg) no-repeat 50% 50%;
+            background-size: contain;
+            opacity: 0;
+            pointer-events: none;
         }
     }
     & button {
@@ -130,7 +143,7 @@ html, body {
         list-style: none;
         margin: 0px;
         padding:0px;
-        font-size: 2rem; /* 32px */
+        font-size: 1.71rem; 
         & li {
             width: 100%;
             & a {
@@ -175,7 +188,7 @@ html, body {
 #footer-links {
     display: flex;
     /* height: 100%; */
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 0.8%;
 }
 
@@ -351,6 +364,7 @@ html, body {
     cursor: pointer;
     border: 2px solid #ddd;
     text-align: center;
+    box-shadow: 0px 0px 8px 6px rgb(119 119 119 / 10%);
     & img {
         margin-inline: 32px;
         width: 70%; /*calc(100% - 32px);*/
@@ -386,3 +400,36 @@ html, body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
 } */
+
+/* #header {
+    height: 10vh;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    z-index: 10; 
+}
+#nav-menu {
+    grid-area: menu;
+    position: fixed; 
+    top: 10vh; 
+    left: 0; 
+    width: 8%; 
+    height: min-content;
+    background-color: #949494; 
+    z-index: 9; 
+}
+
+#main-container {
+    grid-template: 
+        "header header" 10vh 
+        "menu content" 1fr
+        "footer footer" 10vh /
+        8% 1fr;
+    padding-top: 10vh; 
+    overflow: hidden; 
+} */
+#content-container {
+    grid-area: content;
+    overflow-y: auto; 
+    /* padding-left: 8%;  */
+}
