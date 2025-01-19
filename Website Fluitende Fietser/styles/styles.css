@@ -507,7 +507,6 @@ html, body {
     display: flex;
     justify-content: center;
     transform: translateY(200%);
-    /* opacity: 0; */
     gap: 4px;
     transition: color 200ms, opacity 200ms, transform 200ms;
     & > div {
