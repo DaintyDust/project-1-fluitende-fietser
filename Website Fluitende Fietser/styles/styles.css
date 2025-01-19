@@ -79,6 +79,7 @@ html, body {
     width: 45%;
     display: flex;
     border-radius: 12px;
+    transition: 0.1s;
     &:has(input[type=search]:focus) {
         outline: 2px solid white;
         box-shadow: 0px 0px 8px 6px rgb(255 255 255 / 30%);
@@ -153,6 +154,7 @@ html, body {
                 width: 100%;
                 text-align: center;
             &:hover {
+                transition: 0.4s;
                 background-color: #7d7d7d;
                 box-shadow: 0 0px 8px 0px rgb(255 255 255 / 30%);
             }
@@ -365,6 +367,7 @@ html, body {
     border: 2px solid #ddd;
     text-align: center;
     box-shadow: 0px 0px 8px 6px rgb(119 119 119 / 10%);
+    transition: border 0.2s;
     & img {
         margin-inline: 32px;
         width: 70%; /*calc(100% - 32px);*/
@@ -373,6 +376,9 @@ html, body {
     }
     & label {
         font-size: 1.5rem; /* 24px */
+    }
+    &:hover {
+        border: 2px solid #adadad;
     }
 }
 
