@@ -48,27 +48,40 @@ function CreateBikeSlide() {
 
 function initializeSlider() {
     if(slides.length > 0) {
-        slides[slideIndex].classList.add("display-sliding-image");
+        // slides[slideIndex].classList.add("display-sliding-image");
         slidebuttons[slideIndex].setAttribute("data-current","true");
         intervalId = setInterval(nextSlide, 5000);
     }
 }
 
 function showSlide(index) {
-
+    const sliding_images_items = doc("sliding-images-items");
     if(index >= slides.length) {
         slideIndex = 0;
     } else if(index < 0) {
         slideIndex = slides.length - 1;
     }
 
-    slides.forEach((slide) => {
-        slide.classList.remove("display-sliding-image");
+    // slides.forEach((slide) => {
+    //     slide.classList.remove("display-sliding-image");
+    // });
+    slides.forEach((slide, i) => {
+        // slide.classList.remove("display-sliding-image", "slide-out-left", "slide-in-right");
+        // if (i === slideIndex) {
+        //     slide.classList.add("display-sliding-image");
+        // } else if (i === (slideIndex - 1)) {
+        //     slide.classList.add("slide-out-left");
+        // } else if (i === (slideIndex + 1)) {
+        //     slide.classList.add("slide-in-right");
+        // } else {
+        //     slide.classList.remove("slide-out-left", "slide-in-right");
+        // }
+        sliding_images_items.style.transform = `translateX(-${slideIndex * 100}%)`;
     });
     slidebuttons.forEach((button) => {
         button.setAttribute("data-current","false");
     });
-    slides[slideIndex].classList.add("display-sliding-image");
+    // slides[slideIndex].classList.add("display-sliding-image");
     slidebuttons[slideIndex].setAttribute("data-current","true"); 
 }
 
