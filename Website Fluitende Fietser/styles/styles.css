@@ -389,12 +389,56 @@ html, body {
 .hidden {
     display: none;
 }
-#about-us-title {
-    font-size: 2.0rem;
+#about-us {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+#about-us-content {
     margin-left: 200px;
     margin-top: 150px;
+    width: 40%;
+    background-color: #949494;
+    border-radius: 14px; /* Afgeronde hoeken */
+    overflow: hidden;
+    
 }
 
+#about-us-title {
+    font-size: 2.0rem;
+    color: #f9f9f9;
+    background-color: #9ddbeb;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin: 0; /* Verwijder marges zodat de titel direct tegen de tekst aan staat */
+}
+
+#about-us-text {
+    padding: 20px;
+    line-height: 1.6;
+    font-size: 20px;
+    color: #f9f9f9;
+    background-color: #949494;
+    margin: 0; /* Verwijder marges zodat de tekst direct tegen de titel aan staat */
+}
+#about-us-image-conainer {
+    margin-left: 200px;
+    margin-top: 50px;
+    width: 40%;
+    border-radius: 14px; /* Afgeronde hoeken */
+    overflow: hidden; /* Zorg ervoor dat de inhoud binnen de afgeronde hoeken blijft */
+}
+#about-us-image {
+    /* max-width: 200px; */
+    /* max-height: 2000px; */
+    width: 300;
+    /* margin-left: 1200px; */
+    /* margin-bottom: 50px; */
+    border-radius: 14px; 
+    border-color: #9ddbeb;
+    border-width: 1px;
+}
 
 /* #bigger-bike-container {
     height: calc(100% - 100px);
