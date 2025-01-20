@@ -157,8 +157,8 @@ html, body {
                 width: 100%;
                 text-align: center;
                 font-weight: bold;
+                transition: background-color 0.4s, box-shadow 0.4s, padding 0.4s, color 0.4s;
                 &[selected] {
-                    transition: background-color 0.4s, box-shadow 0.4s, padding 0.4s, color 0.4s;
                     background-color: #e3e3e3;
                     box-shadow: 0 0px 8px 0px rgb(255 255 255 / 30%);
                     z-index: 2;
@@ -172,7 +172,6 @@ html, body {
                     }
                 }
                 &:hover {
-                    transition: background-color 0.4s, box-shadow 0.4s, padding 0.4s;
                     background-color: #7d7d7d;
                     box-shadow: 0 0px 8px 0px rgb(255 255 255 / 30%);
                     padding-left: 25px;
@@ -503,9 +502,9 @@ html, body {
     display: flex;
     align-items: center;
     position: relative;
-    width: 30%;
-    height: 35%;
-    margin: 50px;
+    width: 60%; /*30%;*/
+    height: 50%; /*35%;*/
+    margin: 50px auto;/* 50px;*/
     padding: 20px;
     background-color: #ddd;
     border-radius: 10px;
@@ -596,4 +595,46 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+}
+
+#homepage-text-container {
+    position: relative;
+    width: 60%;
+    height: auto;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+#homepage-text-container p {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+#homepage-text-container {
+    position: relative;
+    width: 60%;
+    height: auto;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#homepage-text-container h2 {
+    text-align: center;
+    color: #007bff;
+}
+
+#homepage-text-container p {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
