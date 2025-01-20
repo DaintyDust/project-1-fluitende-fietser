@@ -32,7 +32,8 @@ function OpenBikeInfo(bikename, bikebrand, bikeprice, biketype, bikecolor, bikeg
     doc("bike-hand").innerHTML = `Isnieuw: ${isnew}`;
     doc("bike-code").innerHTML = `Bikecode: ${bikecode}`;
     doc("bike-commentary").innerHTML = `Opmerking: ${bikecommentary}`;
-    doc("bigger-bike-image").src = `images/fietsen/${bikename}.jpg`;
+    const formattedBikeName = bikename.split(' ').join('_');
+    doc("bigger-bike-image").src = `images/fietsen/${formattedBikeName}.jpg`;
 }
 function CloseBikeInfo() {
     doc("shop-container").style.display = 'grid';
@@ -43,7 +44,8 @@ function addBike(bikename) {
     const newbtn = document.createElement('button');
     newbtn.classList.add("shop-button");
     const newimg = document.createElement('img');
-    newimg.src = `images/fietsen/${bikename}.jpg`;
+    const formattedBikeName = bikename.split(' ').join('_');
+    newimg.src = `images/fietsen/${formattedBikeName}.jpg`;
     const newlabel = document.createElement('label');
     newlabel.innerHTML = bikename;
     

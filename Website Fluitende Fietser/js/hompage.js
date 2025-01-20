@@ -5,9 +5,27 @@ let intervalId = null;
 
 document.addEventListener("DOMContentLoaded", () => {
     CreateBikeSlide();
+    LoadHomePageText();
 });
 
-function CreateBikeSlide() {
+function LoadHomePageText() {
+    fetch("assets/homepage-text.txt")
+    .then((respnse) => respnse.text())
+    .then((text) => {
+        const texts = text.split("\n");
+        for (const linetext of texts) {
+            const newp = document.createElement('p');
+            const newspan = document.createElement('span');
+            newspan.innerHTML = linetext;
+            newp.appendChild(newspan);
+            doc("homepage-text-container").appendChild(newp);
+        }
+    })
+    .catch((e) => console.error(e));
+}
+
+function CreateBikeSlide() { 
+
     fetch("assets/fietsen.txt")
     .then((respnse) => respnse.text())
     .then((text) => {
@@ -15,11 +33,12 @@ function CreateBikeSlide() {
         for (const bike of bikes) {
             const [number, bikename, drivetype, driveoffer, bikegender, biketype, bikebrand, isnew, bikecolor, bikeprice, bikecommentary] = bike.split(":");
            
+            const formattedBikeName = bikename.split(' ').join('_');
             const sliding_image_item = document.createElement('div');
             sliding_image_item.classList.add("sliding-image-item");
             const sliding_image = document.createElement('img');
             sliding_image.classList.add("sliding-image");
-            sliding_image.src = `images/fietsen/${bikename}.jpg`;
+            sliding_image.src = `images/fietsen/${formattedBikeName}.jpg`;
             const span = document.createElement('span');
             span.innerHTML = bikename;
             sliding_image_item.appendChild(sliding_image);
