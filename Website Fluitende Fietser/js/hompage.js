@@ -31,7 +31,6 @@ function CreateBikeSlide() {
             doc("sliding-page-number").appendChild(page_number);
 
             page_number.addEventListener('click', () => {
-                clearInterval(intervalId);
                 slideIndex = bikes.indexOf(bike);
                 showSlide(slideIndex);
             });
@@ -75,7 +74,6 @@ function nextSlide() {
 }
 
 function previousSlide() {
-    clearInterval(intervalId);
     slideIndex--;
     showSlide(slideIndex);
 }
