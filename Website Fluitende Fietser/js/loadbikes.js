@@ -27,9 +27,9 @@ function OpenBikeInfo(bikename, bikebrand, bikeprice, biketype, bikecolor, bikeg
     doc("bike-price").innerHTML = `Prijs: €${bikeprice}`;
     doc("bike-type").innerHTML = `Type: ${biketype}`;
     doc("bike-color").innerHTML = `Kleur: ${bikecolor}`
-    doc("bike-gender").innerHTML = `Gendere :${bikegender}`;
+    doc("bike-gender").innerHTML = `Frametype: ${bikegender}`;
     doc("bike-offer").innerHTML = `Offer: ${driveoffer}`;
-    doc("bike-hand").innerHTML = `Isnieuw: ${isnew}`;
+    doc("bike-hand").innerHTML = `Status: ${isnew}`;
     doc("bike-code").innerHTML = `Bikecode: ${bikecode}`;
     doc("bike-commentary").innerHTML = `Opmerking: ${bikecommentary}`;
     const formattedBikeName = bikename.split(' ').join('_');

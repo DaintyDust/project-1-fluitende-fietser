@@ -169,16 +169,17 @@ html, body {
                     z-index: 2;
                     position: relative;
                     color: #555;
-                    text-align: left;
-                    padding-left: 15px;
+                    /* text-align: left; */
+                    padding-left: 20px;
                     &:hover {
-                        padding-left: 50px;
+                        /* padding-left: 50px; */
                         color: white;
                     }
                 }
                 &:hover {
                     background-color: #7d7d7d;
                     box-shadow: 0 0px 8px 0px rgb(255 255 255 / 30%);
+                    text-align: left;
                     padding-left: 25px;
                 }
             }
@@ -437,71 +438,29 @@ html, body {
 #about-us-text {
     padding: 20px;
     line-height: 1.6;
-    font-size: 20px;
+    font-size: 19px;
+    height: fit-content;
     color: #f9f9f9;
     background-color: #949494;
-    margin: 0; /* Verwijder marges zodat de tekst direct tegen de titel aan staat */
+    font-weight: bolder;
+    margin: auto; /* Verwijder marges zodat de tekst direct tegen de titel aan staat */
 }
 #about-us-image-conainer {
     margin-left: 200px;
     margin-top: 50px;
+    align-self: center;
     width: 40%;
     border-radius: 14px; /* Afgeronde hoeken */
     overflow: hidden; /* Zorg ervoor dat de inhoud binnen de afgeronde hoeken blijft */
 }
 #about-us-image {
-    /* max-width: 200px; */
-    /* max-height: 2000px; */
-    width: 300;
-    /* margin-left: 1200px; */
-    /* margin-bottom: 50px; */
-    border-radius: 14px; 
-    border-color: #9ddbeb;
-    border-width: 1px;
+    width: 70%;
+    height: 100%;
+    margin-top: 150px;
+    border-radius: 14px;
+    border: solid #b0b0b0;
+    box-shadow: 0px 0px 8px 8px rgb(119 119 119 / 10%);
 }
-
-/* #bigger-bike-container {
-    height: calc(100% - 100px);
-    width: calc(100% - 100px);
-    margin: 50px;
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    grid-template-columns: 1fr 1fr 50px;
-    grid-template-rows: 50px auto 1fr 1fr;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-} */
-
-/* #header {
-    height: 10vh;
-    position: fixed; 
-    top: 0; 
-    left: 0;
-    z-index: 10; 
-}
-#nav-menu {
-    grid-area: menu;
-    position: fixed; 
-    top: 10vh; 
-    left: 0; 
-    width: 8%; 
-    height: min-content;
-    background-color: #949494; 
-    z-index: 9; 
-}
-
-#main-container {
-    grid-template: 
-        "header header" 10vh 
-        "menu content" 1fr
-        "footer footer" 10vh /
-        8% 1fr;
-    padding-top: 10vh; 
-    overflow: hidden; 
-} */
 
 #sliding-images-container {
     display: flex;
