@@ -26,42 +26,43 @@ function LoadHomePageText() {
 
 function CreateBikeSlide() { 
 
-    fetch("assets/fietsen.txt")
-    .then((respnse) => respnse.text())
-    .then((text) => {
-        const bikes = text.split("\n");
-        for (const bike of bikes) {
-            const [number, bikename, drivetype, driveoffer, bikegender, biketype, bikebrand, isnew, bikecolor, bikeprice, bikecommentary] = bike.split(":");
-           
-            const formattedBikeName = bikename.split(' ').join('_');
-            const sliding_image_item = document.createElement('div');
-            sliding_image_item.classList.add("sliding-image-item");
-            const sliding_image = document.createElement('img');
-            sliding_image.classList.add("sliding-image");
-            sliding_image.src = `images/fietsen/${formattedBikeName}.jpg`;
-            const span = document.createElement('span');
-            span.innerHTML = bikename;
-            sliding_image_item.appendChild(sliding_image);
-            sliding_image_item.appendChild(span);
-            doc("sliding-images-items").appendChild(sliding_image_item);
+    fetch('images/homepage_sycle/')
+    .then(response => response.text())
+    .then(html => {
+        const parser = new DOMParser();
+        const links = parser.parseFromString(html, 'text/html').querySelectorAll('a');
+        let currentindex = 0;
+        links.forEach((link) => {
+            const href = link.getAttribute('href');
+            if (href.endsWith('.jpg') || href.endsWith('.png') || href.endsWith('.gif')) { 
+                const sliding_image_item = document.createElement('div');
+                sliding_image_item.classList.add("sliding-image-item");
+                sliding_image_item.setAttribute("data-number",currentindex);
+                const sliding_image = document.createElement('img');
+                sliding_image.classList.add("sliding-image");
+                sliding_image.src = href;
+                sliding_image_item.appendChild(sliding_image);
+                doc("sliding-images-items").appendChild(sliding_image_item);
+                
+                const page_number = document.createElement('div');
+                page_number.setAttribute("data-current","false");
+                doc("sliding-page-number").appendChild(page_number);
 
-            const page_number = document.createElement('div');
-            page_number.setAttribute("data-current","false");
-            doc("sliding-page-number").appendChild(page_number);
-
-            page_number.addEventListener('click', () => {
-                slideIndex = bikes.indexOf(bike);
-                showSlide(slideIndex);
-            });
-
-        }
-        slides = document.querySelectorAll(".sliding-image-item")
-        slidebuttons = document.querySelectorAll("#sliding-page-number div");
-        console.log(slides);
-        console.log(slidebuttons);
-        initializeSlider();
+                page_number.addEventListener('click', () => {
+                    slideIndex = sliding_image_item.getAttribute("data-number");
+                    console.log(slideIndex);
+                    showSlide(slideIndex);
+                });
+                currentindex++;         
+            }
+        });
+            slides = document.querySelectorAll(".sliding-image-item")
+            slidebuttons = document.querySelectorAll("#sliding-page-number div");
+            // console.log(slides);
+            // console.log(slidebuttons);
+            initializeSlider();
     })
-    .catch((e) => console.error(e));
+    .catch(error => console.error('Error fetching directory listing:', error));
 }
 
 function initializeSlider() {
@@ -87,12 +88,19 @@ function showSlide(index) {
     slidebuttons[slideIndex].setAttribute("data-current","true"); 
 }
 
-function nextSlide() {
+function ResetTimer() {
+    clearInterval(intervalId);
+    intervalId = setInterval(nextSlide, 5000);
+}
+
+function nextSlide(pressedbtn) {
+    if (pressedbtn) {ResetTimer();}
     slideIndex++;
     showSlide(slideIndex);
 }
 
-function previousSlide() {
+function previousSlide(pressedbtn) {
+    if (pressedbtn) {ResetTimer();}
     slideIndex--;
     showSlide(slideIndex);
 }

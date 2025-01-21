@@ -2,6 +2,7 @@ html, body {
     margin: 0px;
     overflow-x: hidden;
     font-size: 16px;
+    background-color: #f9f9f9;
 }
 * {
     font-family: "Segoe UI", Tahoma, sans-serif;
@@ -203,7 +204,7 @@ html, body {
     height: 50%;
     position: absolute;
     bottom: 0px;
-    animation: drive 20s linear infinite;
+    /* animation: drive 20s linear infinite; */
 }
 #footer-links {
     display: flex;
@@ -502,11 +503,11 @@ html, body {
     display: flex;
     align-items: center;
     position: relative;
-    width: 60%; /*30%;*/
+    width: 44%; /*30%;*/
     height: 50%; /*35%;*/
     margin: 50px auto;/* 50px;*/
     padding: 20px;
-    background-color: #ddd;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -533,11 +534,11 @@ html, body {
 .sliding-image {
     width: 80%;
     height: 85%;
-    object-fit: contain;
+    /* object-fit: contain; */
     object-position: center center;
     border-radius: 12px;
     background-color: #fff;
-    border: 2px solid #a7a5a5;
+    border: 3px solid #a7a5a5;
 
 }
 .icon[data-icon]::before {
