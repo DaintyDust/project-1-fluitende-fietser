@@ -510,7 +510,7 @@ html, body {
     border-radius: 12px;
     background-color: #fff;
     border: 2px solid #a7a5a5;
-
+    user-select: none;
 }
 .icon[data-icon]::before {
     content: attr(data-icon);
