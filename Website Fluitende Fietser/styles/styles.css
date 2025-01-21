@@ -143,7 +143,7 @@ html, body {
     height: 20vh; /* 24%; *//*3.375%;*/
     background-color: #949494;
     border-bottom-right-radius: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
     & ul {
         display: flex;
         flex-direction: column;
@@ -163,23 +163,22 @@ html, body {
                 text-align: center;
                 font-weight: bold;
                 transition: background-color 0.4s, box-shadow 0.4s, padding 0.4s, color 0.4s;
+                border-top-right-radius: 14px;
+                border-bottom-right-radius: 14px;
                 &[selected] {
                     background-color: #e3e3e3;
                     box-shadow: 0 0px 8px 0px rgb(255 255 255 / 30%);
                     z-index: 2;
                     position: relative;
                     color: #555;
-                    /* text-align: left; */
-                    padding-left: 20px;
+                    padding-left: 25px;
                     &:hover {
-                        /* padding-left: 50px; */
                         color: white;
                     }
                 }
                 &:hover {
                     background-color: #7d7d7d;
                     box-shadow: 0 0px 8px 0px rgb(255 255 255 / 30%);
-                    text-align: left;
                     padding-left: 25px;
                 }
             }
