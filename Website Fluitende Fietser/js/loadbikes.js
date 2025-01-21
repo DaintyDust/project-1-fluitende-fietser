@@ -73,6 +73,17 @@ function remove() {
     doc("shop-container").lastElementChild.remove();
 }
 
+function OpenShoppingCart() {
+    doc("shopping-cart-container").style.left = '75%';
+}
+function CloseShoppingCart() {
+    doc("shopping-cart-container").style.left = '100%';
+}
+
+function addToCart() {
+    OpenShoppingCart();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     LoadBikes();
     doc("close-bigger-bike").addEventListener('click', CloseBikeInfo);

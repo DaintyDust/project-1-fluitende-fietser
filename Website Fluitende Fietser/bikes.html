@@ -50,12 +50,25 @@
                         <label id="bike-hand">Eerste hands</label>
                         <label id="bike-code">Fietscode</label>
                         <label id="bike-commentary">Opmerking</label>
-                        <button id="bike-buy-button">
+                        <button id="bike-buy-button" onclick="addToCart()">
                             <span>Aan winkelwagen toevoegen</span>
-                            <img src="images/winkelwagen.png" alt="winkelwagen-icon"></button>
+                            <img src="images/winkelwagen.png" alt="winkelwagen-icon">
+                        </button>
                     </div>
                 </div>
-                <button id="close-bigger-bike">X</button>
+                <button id="close-bigger-bike" class="close-btn">X</button>
+            </div>
+            <div id="shopping-cart-container">
+                <div id="shopping-cart">
+                    <h1 id="shopping-cart-title">Winkelwagen</h1>
+                    <button id="close-shopping-cart" class="close-btn" onclick="CloseShoppingCart()">X</button>
+                    <div id="shopping-cart-items">
+                    </div>
+                    <div id="shopping-cart-total">
+                        <label id="total-price">Totaal: €0</label>
+                        <button id="buy-button">Kopen</button>
+                    </div>
+                </div>
             </div>
         </div>
         <footer id="footer">
