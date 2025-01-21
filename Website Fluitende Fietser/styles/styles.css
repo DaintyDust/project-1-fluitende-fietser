@@ -59,6 +59,10 @@ html, body {
     display: flex;
     justify-content: center;
 }
+#content-container.homepage {
+    gap: 5%;
+    padding-inline: 50px;
+}
 
 #logo {
     grid-area: logo;
@@ -507,7 +511,7 @@ html, body {
     height: 50%; /*35%;*/
     margin: 50px auto;/* 50px;*/
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -538,7 +542,7 @@ html, body {
     object-position: center center;
     border-radius: 12px;
     background-color: #fff;
-    border: 3px solid #a7a5a5;
+    border: 2px solid #a7a5a5;
 
 }
 .icon[data-icon]::before {
@@ -613,13 +617,12 @@ html, body {
     margin: 0;
     padding: 10px 0;
     font-size: 1.2rem;
-    line-height: 1.6;
 }
 
 #homepage-text-container {
     position: relative;
     width: 60%;
-    height: auto;
+    height: fit-content;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
@@ -633,9 +636,3 @@ html, body {
     color: #007bff;
 }
 
-#homepage-text-container p {
-    margin: 0;
-    padding: 10px 0;
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
