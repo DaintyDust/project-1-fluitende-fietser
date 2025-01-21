@@ -6,6 +6,7 @@ let intervalId = null;
 document.addEventListener("DOMContentLoaded", () => {
     CreateBikeSlide();
     LoadHomePageText();
+    LoadOpenTimes();
 });
 
 function LoadHomePageText() {
@@ -19,6 +20,89 @@ function LoadHomePageText() {
             newspan.innerHTML = linetext;
             newp.appendChild(newspan);
             doc("homepage-text-container").appendChild(newp);
+        }
+    })
+    .catch((e) => console.error(e));
+}
+
+function CheckStoreOpen() {
+    const date = new Date();
+    const day = date.getDay();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const time = `${hours}:${minutes}`;
+    console.log(`day: ${day}, time: ${time}`);
+    fetch("assets/opening-hours.txt")
+    .then((respnse) => respnse.text())
+    .then((text) => {
+        const texts = text.split("\n");
+        for (const opentimesperday of texts) {
+            const [dayname, opentime, closetime] = opentimesperday.split(",");
+            if (dayname === day) {
+                if (opentime === "gesloten") {
+                    doc("store-closed").style.display = 'block';
+                } else {
+                    if (time >= opentime && time <= closetime) {
+                        doc("store-open").style.display = 'block';
+                    } else {
+                        doc("store-closed").style.display = 'block';
+                    }
+                }
+            }
+        }
+    })
+    .catch((e) => console.error(e));
+}
+
+function LoadOpenTimes() {
+    const weekdays = ["Zondag","Maandag","Dinsdag","Woensdag","Donderdag","Vrijdag","Zaterdag"];
+    const date = new Date();
+    const dayname = date.getDay();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const time = `${hours}:${minutes}`;
+    // console.log(date);
+    console.log(weekdays[dayname]);
+    console.log(time);
+    fetch("assets/opening-hours.txt")
+    .then((respnse) => respnse.text())
+    .then((text) => {
+        const texts = text.split("\n");
+        for (const opentimesperday of texts) {
+            const [day, opentime, closetime] = opentimesperday.split(",");
+
+            const div = document.createElement('div');
+            div.classList.add("opening-hours-item");
+            const dayspan = document.createElement('span');
+            dayspan.innerHTML = `${day}:`;
+            const timespan = document.createElement('span');
+            if (opentime === "gesloten") {
+                timespan.classList.add("store-closed-text");
+                timespan.innerHTML = `${opentime}`;
+            } else {
+                timespan.innerHTML = `${opentime} - ${closetime}`;
+            }
+            div.appendChild(dayspan);
+            div.appendChild(timespan);
+            doc("homepage-opening-hours").appendChild(div);
+            // console.log(day, weekdays[dayname]);
+            if (day === weekdays[dayname]) {
+                if (opentime === "gesloten") {
+                    doc("opening-times-display").classList.add("store-closed");
+                    doc("homepage-opening-text").innerHTML = "Gesloten";
+                    console.log("closed");
+                } else {
+                    if (time >= opentime && time <= closetime) {
+                        doc("opening-times-display").classList.remove("store-closed");
+                        doc("homepage-opening-text").innerHTML = "Open";
+                        console.log("open");
+                    } else {
+                        doc("opening-times-display").classList.add("store-closed");
+                        doc("homepage-opening-text").innerHTML = "Gesloten";
+                        console.log("closed");
+                    }
+                }
+            }
         }
     })
     .catch((e) => console.error(e));
