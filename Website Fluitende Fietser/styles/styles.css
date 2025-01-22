@@ -289,6 +289,38 @@ html, body {
     padding: 20px;
     border-top: 5px solid;
 }
+#shopping-cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    width: calc(100% - 40px);
+    height: calc(81% - 60px);
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    overflow-y: auto;
+}
+.shopping-cart-item {
+    width: calc(100% - 40px);
+    height: 10%;
+    background-color: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    & img {
+        height: 100%;
+        width: auto;
+        margin-right: 20px;
+    }
+}
+.shopping-cart-item-info {
+    display: flex;
+    flex-direction: column;
+    & h3 {
+        color: #333;
+        margin: 0;
+    }
+}
 #close-shopping-cart {
     position: absolute;
     top: 20px;

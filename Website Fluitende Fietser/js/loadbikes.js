@@ -73,6 +73,8 @@ function remove() {
     doc("shop-container").lastElementChild.remove();
 }
 
+let shoppingcart = localStorage.getItem("shopping-cart") || [];
+
 function OpenShoppingCart() {
     doc("shopping-cart-container").style.left = '75%';
 }
@@ -80,7 +82,46 @@ function CloseShoppingCart() {
     doc("shopping-cart-container").style.left = '100%';
 }
 
+function CreateItemInShoppingCart(Bikename, bikeprice) {
+    const newitem = document.createElement('div');
+    newitem.classList.add("shopping-cart-item");
+    const newimg = document.createElement('img');
+    const formattedBikeName = Bikename.split(' ').join('_');
+    newimg.src = `images/fietsen/${formattedBikeName}.jpg`;;
+
+    const infodiv = document.createElement('div');
+    infodiv.classList.add("shopping-cart-item-info", "flex");
+
+    const newnameh3 = document.createElement('h3');
+    newnameh3.innerHTML = Bikename;
+    const newprice = document.createElement('label');
+    newprice.innerHTML = bikeprice;
+    newitem.appendChild(newimg);
+    newitem.appendChild(infodiv);
+    infodiv.appendChild(newnameh3);
+    infodiv.appendChild(newprice);
+    doc("shopping-cart-items").appendChild(newitem);
+    
+    const newbikeprice = parseFloat(price.replace(/[^\d\.]*/g, ''));
+    shoppingcart.push({Bikename, newbikeprice});
+    console.log(shoppingcart);
+}
+
+function AddPriceToTotal(price) {
+   const currenttotal = doc("total-price").innerHTML
+//    const currenttotalnum = parseFloat(currenttotal.split('€')[1]);
+    const currenttotalnum = localStorage.getItem("Total-price-Shopping-cart") || 0;
+   const pricenum = parseFloat(price.split('€')[1]);
+   console.log(pricenum, currenttotalnum, parseFloat(pricenum), parseFloat(currenttotalnum));
+   doc("total-price").innerHTML = `Totaal: ${parseFloat(currenttotalnum) + parseFloat(pricenum)}`;
+   localStorage.setItem("Total-price-Shopping-cart", currenttotalnum + pricenum);
+}
+
 function addToCart() {
+    const bikename = doc("bike-name").innerHTML;
+    const bikeprice = doc("bike-price").innerHTML;
+    CreateItemInShoppingCart(bikename, bikeprice);
+    AddPriceToTotal(bikeprice);
     OpenShoppingCart();
 }
 

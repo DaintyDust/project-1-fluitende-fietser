@@ -30,7 +30,7 @@ function CheckStoreOpen() {
     const day = date.getDay();
     const hours = date.getHours();
     const minutes = date.getMinutes();
-    const time = `${hours}:${minutes}`;
+    const time = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
     console.log(`day: ${day}, time: ${time}`);
     fetch("assets/opening-hours.txt")
     .then((respnse) => respnse.text())
@@ -42,7 +42,7 @@ function CheckStoreOpen() {
                 if (opentime === "gesloten") {
                     doc("store-closed").style.display = 'block';
                 } else {
-                    if (time >= opentime && time <= closetime) {
+                    if (time >= opentime && time < closetime) {
                         doc("store-open").style.display = 'block';
                     } else {
                         doc("store-closed").style.display = 'block';
@@ -60,7 +60,7 @@ function LoadOpenTimes() {
     const dayname = date.getDay();
     const hours = date.getHours();
     const minutes = date.getMinutes();
-    const time = `${hours}:${minutes}`;
+    const time = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
     // console.log(date);
     console.log(weekdays[dayname]);
     console.log(time);
@@ -92,6 +92,9 @@ function LoadOpenTimes() {
                     doc("homepage-opening-text").innerHTML = "Gesloten";
                     console.log("closed");
                 } else {
+                    console.log(time >= opentime, time <= closetime)
+                    console.log(opentime, closetime);
+                    console.log(time);
                     if (time >= opentime && time <= closetime) {
                         doc("opening-times-display").classList.remove("store-closed");
                         doc("homepage-opening-text").innerHTML = "Open";
