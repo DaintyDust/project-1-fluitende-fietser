@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/79433d6630.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="images/FluitendeFietserLogo-Transparant.png">
     <script src="js/main.js"></script>
     <script src="js/loadbikes.js"></script>
@@ -19,6 +20,9 @@
                 <input type="search" placeholder="Search.." name="search" id="search">
                 <button id="search-btn"><img src="images/search.png" alt="search-image"></button>
             </div>
+            <button id="open-shopping-cart" onclick="OpenShoppingCart()">
+                <img src="images/winkelwagen.png" alt="winkelwagen-icon">
+            </button>
         </header>
         <nav id="nav-menu">
             <ul>
@@ -65,8 +69,8 @@
                     <div id="shopping-cart-items">
                     </div>
                     <div id="shopping-cart-total">
-                        <label id="total-price">Totaal: €0</label>
-                        <button id="buy-button">Kopen</button>
+                        <label id="shopping-cart-total-price">Totaal: €0</label>
+                        <button id="shopping-cart-buy-button">Kopen</button>
                     </div>
                 </div>
             </div>

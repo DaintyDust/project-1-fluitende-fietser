@@ -6,11 +6,10 @@ function LoadBikes() {
         const bikes = text.split("\n");
         for (const bike of bikes) {
             const [number, bikename, drivetype, driveoffer, bikegender, biketype, bikebrand, isnew, bikecolor, bikeprice, bikecommentary] = bike.split(":");
-            console.log(`bikename: ${bikename}, drivetype: ${drivetype}, driveoffer: ${driveoffer}, bikegender: ${bikegender}, biketype: ${biketype}, bikebrand: ${bikebrand}, isnew: ${isnew}, bikecolor: ${bikecolor}, bikeprice: ${bikeprice}, bikecommentary: ${bikecommentary}`);
+            //console.log(`bikename: ${bikename}, drivetype: ${drivetype}, driveoffer: ${driveoffer}, bikegender: ${bikegender}, biketype: ${biketype}, bikebrand: ${bikebrand}, isnew: ${isnew}, bikecolor: ${bikecolor}, bikeprice: ${bikeprice}, bikecommentary: ${bikecommentary}`);
             // Pelikaan Carry On Lady : elektrisch : geschikt voor zakelijk en prive : dames : transport : Pelikaan : nieuw : zwart : 769,00 : 28 Inch 53 cm 3V V-Brakes
             const button = addBike(bikename);
             button.addEventListener('click', () => {
-                console.log('Button clicked:');
                 OpenBikeInfo(bikename, bikebrand, bikeprice, biketype, bikecolor, bikegender, driveoffer, isnew, null, bikecommentary);
             });
         }
@@ -73,7 +72,8 @@ function remove() {
     doc("shop-container").lastElementChild.remove();
 }
 
-let shoppingcart = localStorage.getItem("shopping-cart") || [];
+// let shoppingcart = sessionStorage.getItem('shopping-cart') || [];
+let shoppingcart = JSON.parse(sessionStorage.getItem('shopping-cart')) || [];
 
 function OpenShoppingCart() {
     doc("shopping-cart-container").style.left = '75%';
@@ -82,7 +82,7 @@ function CloseShoppingCart() {
     doc("shopping-cart-container").style.left = '100%';
 }
 
-function CreateItemInShoppingCart(Bikename, bikeprice) {
+function CreateItemInShoppingCart(Bikename, bikeprice, updatesession = true) {
     const newitem = document.createElement('div');
     newitem.classList.add("shopping-cart-item");
     const newimg = document.createElement('img');
@@ -96,25 +96,45 @@ function CreateItemInShoppingCart(Bikename, bikeprice) {
     newnameh3.innerHTML = Bikename;
     const newprice = document.createElement('label');
     newprice.innerHTML = bikeprice;
+
+    const btnspacer = document.createElement('div');
+    btnspacer.classList.add("flex-spacer");
+
+    const removebtn = document.createElement('button');
+    removebtn.setAttribute("data-icon", "");
+    removebtn.classList.add("shopping-cart-remove-button", "icon");
+    removebtn.addEventListener('click', () => {
+        newitem.remove();
+        const index = shoppingcart.findIndex(item => item.Bikename === Bikename);
+        shoppingcart.splice(index, 1);
+        sessionStorage.setItem("shopping-cart", JSON.stringify(shoppingcart));
+        AddPriceToTotal();
+    });
+
     newitem.appendChild(newimg);
     newitem.appendChild(infodiv);
+    newitem.appendChild(btnspacer);
+    newitem.appendChild(removebtn);
     infodiv.appendChild(newnameh3);
     infodiv.appendChild(newprice);
     doc("shopping-cart-items").appendChild(newitem);
     
-    const newbikeprice = parseFloat(price.replace(/[^\d\.]*/g, ''));
-    shoppingcart.push({Bikename, newbikeprice});
-    console.log(shoppingcart);
+    if (updatesession) {
+        const newbikeprice = parseFloat(bikeprice.replace('Prijs: €', ''));
+        const elementt = newitem.outerHTML;
+        shoppingcart.push({Bikename, newbikeprice, elementt});
+        sessionStorage.setItem("shopping-cart", JSON.stringify(shoppingcart));
+        console.log(shoppingcart);
+    }
 }
 
 function AddPriceToTotal(price) {
-   const currenttotal = doc("total-price").innerHTML
-//    const currenttotalnum = parseFloat(currenttotal.split('€')[1]);
-    const currenttotalnum = localStorage.getItem("Total-price-Shopping-cart") || 0;
-   const pricenum = parseFloat(price.split('€')[1]);
-   console.log(pricenum, currenttotalnum, parseFloat(pricenum), parseFloat(currenttotalnum));
-   doc("total-price").innerHTML = `Totaal: ${parseFloat(currenttotalnum) + parseFloat(pricenum)}`;
-   localStorage.setItem("Total-price-Shopping-cart", currenttotalnum + pricenum);
+    let total = 0;
+    shoppingcart.forEach(item => {
+        total += item.newbikeprice;
+    });
+    doc("shopping-cart-total-price").innerHTML = `Totaal: €${total.toFixed(2)}`;
+
 }
 
 function addToCart() {
@@ -125,7 +145,16 @@ function addToCart() {
     OpenShoppingCart();
 }
 
+function LoadShoppingCart() {
+    shoppingcart.forEach(item => {
+        const pricelabeltext = `Prijs: €${item.newbikeprice}`;
+        CreateItemInShoppingCart(item.Bikename, pricelabeltext, false);
+    });
+    AddPriceToTotal();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     LoadBikes();
+    LoadShoppingCart();
     doc("close-bigger-bike").addEventListener('click', CloseBikeInfo);
 });

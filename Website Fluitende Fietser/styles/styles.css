@@ -288,6 +288,30 @@ html, body {
     height: 9%;
     padding: 20px;
     border-top: 5px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#shopping-cart-total-price {
+    font-size: x-large;
+    color: #fff;
+}
+#shopping-cart-buy-button {
+    display: flex;
+    align-items: center;
+    color: white;
+    border-radius: 14px;
+    border: none;
+    height: 50px;
+    width: fit-content;
+    background-color: #007bff;
+    font-size: 1.5rem;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color: #0056b3;
+    }
 }
 #shopping-cart-items {
     display: flex;
@@ -307,6 +331,7 @@ html, body {
     border-radius: 14px;
     padding: 20px;
     display: flex;
+    align-items: center;
     & img {
         height: 100%;
         width: auto;
@@ -321,12 +346,40 @@ html, body {
         margin: 0;
     }
 }
+.flex-spacer {
+    flex-grow: 1;
+}
+.shopping-cart-remove-button {
+    width: 25px;
+    height: 25px;
+    translate: 10px;
+    display: contents;
+    &:hover::before {
+        color: red;
+    }
+}
 #close-shopping-cart {
     position: absolute;
     top: 20px;
     right: 20px;
 }
-
+#open-shopping-cart {
+    height: 50px;
+    width: 50px;
+    border-radius: 12px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #949494;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & img {
+        height: 80%;
+        width: 80%;
+    }
+}
 #bigger-bike-container {
     height: calc(100% - 100px);
     width: calc(100% - 100px);
@@ -400,18 +453,13 @@ html, body {
 #bike-buy-button {
     display: flex;
     align-items: center;
-    background-color: #949494;
     color: white;
     border-radius: 14px;
     border: none;
-    font-size: 2rem;
     height: 50px;
     width: fit-content;
     margin-top: 6%;
-
-   
     background-color: #007bff;
-
     font-size: 1.5rem;
     margin-top: 20px;
     padding: 0 20px;
