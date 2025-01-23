@@ -139,12 +139,20 @@ function CreateItemInShoppingCart(Bikename, bikeprice, updatesession = true) {
 }
 
 function AddPriceToTotal(price) {
+    let itemcount = 0;
     let total = 0;
     shoppingcart.forEach(item => {
         total += item.newbikeprice;
+        itemcount++;
     });
-    doc("shopping-cart-total-price").innerHTML = `Totaal: €${total.toFixed(2)}`;
-
+    doc("shopping-cart-total-price").innerHTML = `Totaal: €${total.toFixed(2).replace('.', ',')}`;
+    if (total > 0) {
+        doc("open-shopping-cart").setAttribute("item-count", itemcount);
+        doc("open-shopping-cart").classList.add("show-item-count");
+    } else {
+        doc("open-shopping-cart").setAttribute("item-count", itemcount);
+        doc("open-shopping-cart").classList.remove("show-item-count");
+    }
 }
 
 function addToCart() {
