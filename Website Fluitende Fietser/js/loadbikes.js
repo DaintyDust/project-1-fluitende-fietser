@@ -75,11 +75,21 @@ function remove() {
 // let shoppingcart = sessionStorage.getItem('shopping-cart') || [];
 let shoppingcart = JSON.parse(sessionStorage.getItem('shopping-cart')) || [];
 
+function ToggleShoppingCart() {
+    if (doc("shopping-cart-container").style.left === '100%') {
+        OpenShoppingCart();
+    } else {
+        CloseShoppingCart();
+    }
+}
+
 function OpenShoppingCart() {
     doc("shopping-cart-container").style.left = '75%';
+    doc("open-shopping-cart").style.setProperty('--font-weight-before', '600');
 }
 function CloseShoppingCart() {
     doc("shopping-cart-container").style.left = '100%';
+    doc("open-shopping-cart").style.setProperty('--font-weight-before', '500');
 }
 
 function CreateItemInShoppingCart(Bikename, bikeprice, updatesession = true) {
@@ -154,6 +164,7 @@ function LoadShoppingCart() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    doc("shopping-cart-container").style.left = '100%';
     LoadBikes();
     LoadShoppingCart();
     doc("close-bigger-bike").addEventListener('click', CloseBikeInfo);

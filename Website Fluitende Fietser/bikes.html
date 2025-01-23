@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <script src="https://kit.fontawesome.com/79433d6630.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
     <link rel="icon" type="image/x-icon" href="images/FluitendeFietserLogo-Transparant.png">
     <script src="js/main.js"></script>
     <script src="js/loadbikes.js"></script>
@@ -20,17 +21,17 @@
                 <input type="search" placeholder="Search.." name="search" id="search">
                 <button id="search-btn"><img src="images/search.png" alt="search-image"></button>
             </div>
-            <button id="open-shopping-cart" onclick="OpenShoppingCart()">
-                <img src="images/winkelwagen.png" alt="winkelwagen-icon">
+            <button id="open-shopping-cart" class="icon" data-icon="" onclick="ToggleShoppingCart()">
+                <!-- <img src="images/winkelwagen.png" alt="winkelwagen-icon"> -->
             </button>
         </header>
         <nav id="nav-menu">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="bikes.html" selected>Fietsen</a></li>
-                <li><a href="rent.html">Verhuur</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="about-us.html">Over ons</a></li>
+                <li><a href="index.html" class="icon-hover" data-icon="">Home</a></li>
+                <li><a href="bikes.html" selected class="icon" data-icon="">Fietsen</a></li>
+                <li><a href="rent.html" class="icon-hover" data-icon="">Verhuur</a></li>
+                <li><a href="contact.html" class="icon-hover" data-icon="">Contact</a></li>
+                <li><a href="about-us.html" class="icon-hover" data-icon="">Over ons</a></li>
                 <li><button id="add" onclick="add()">add</button></li>
                 <li><button id="remove" onclick="remove()">remove</button></li>
             </ul>
@@ -54,18 +55,18 @@
                         <label id="bike-hand">Eerste hands</label>
                         <label id="bike-code">Fietscode</label>
                         <label id="bike-commentary">Opmerking</label>
-                        <button id="bike-buy-button" onclick="addToCart()">
+                        <button id="bike-buy-button" class="icon-after" data-icon="" onclick="addToCart()">
                             <span>Aan winkelwagen toevoegen</span>
-                            <img src="images/winkelwagen.png" alt="winkelwagen-icon">
+                            <!-- <img src="images/winkelwagen.png" alt="winkelwagen-icon"> -->
                         </button>
                     </div>
                 </div>
-                <button id="close-bigger-bike" class="close-btn">X</button>
+                <button id="close-bigger-bike" class="close-btn icon" data-icon=""></button>
             </div>
             <div id="shopping-cart-container">
                 <div id="shopping-cart">
                     <h1 id="shopping-cart-title">Winkelwagen</h1>
-                    <button id="close-shopping-cart" class="close-btn" onclick="CloseShoppingCart()">X</button>
+                    <button id="close-shopping-cart" class="close-btn icon" data-icon="" onclick="CloseShoppingCart()"></button>
                     <div id="shopping-cart-items">
                     </div>
                     <div id="shopping-cart-total">
