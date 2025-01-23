@@ -177,8 +177,17 @@ html, body {
                         color: white;
                     }
                 }
+                &:hover {
+                    background-color: #7d7d7d;
+                    box-shadow: 0 0px 8px 0px rgb(255 255 255 / 30%);
+                    padding-left: 25px;
+                }
+
+                /* icons */
                 &.icon::before {
                     margin-right: 10px;
+                    transition:  opacity 0.3s, transform 0.4s;
+                    transform: translateX(0px);
                 }
                 &.icon-hover::before {
                     content: attr(data-icon);
@@ -187,15 +196,16 @@ html, body {
                     height: auto;
                     z-index: 2;
                     position: absolute;
-                    margin-right: 10px;
                     left: 20px;
                     bottom: 7px;
+                    margin-right: 10px;
                     opacity: 0;
+                    transition:  opacity 0.3s, transform 0.4s;
+                    transform: translateX(-50px);
                 }
-                &:hover {
-                    background-color: #7d7d7d;
-                    box-shadow: 0 0px 8px 0px rgb(255 255 255 / 30%);
-                    padding-left: 25px;
+                &.icon-hover:hover::before {
+                    opacity: 1;
+                    transform: translateX(0px);
                 }
             }
         }
@@ -597,7 +607,6 @@ html, body {
     /* align-self: center; */
     width: 40%;
     border-radius: 14px;
-    overflow: hidden; 
 }
 #about-us-image {
     width: 100%;
