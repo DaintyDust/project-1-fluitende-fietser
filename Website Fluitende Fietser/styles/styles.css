@@ -597,9 +597,12 @@ html, body {
     @media (max-width: 1200px) {
         grid-template-columns: 1fr 50px;
         grid-template-rows: 50px auto 1fr;
+        #content-container {
+
+        }
         #bike-image-container {
             scale: 0.8;
-            grid-column: 1;
+            grid-column: span 2;
             grid-row: 2;
             padding: 0;
             height: auto;
@@ -607,15 +610,25 @@ html, body {
             justify-self: center;
         }
         #bike-info-container {
-            grid-column: 1;
+            grid-column: span 2;
             grid-row: 3;
             height: auto;
+            width: calc(100% - 40px);
         }
         #close-bigger-bike {
             grid-column: 2;
         }
         #bike-buy-button {
             justify-self: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0;
+            & span {
+                font-size: clamp(0.6rem, 1.1vw, 4rem);
+            }
+            &::after {
+                font-size: clamp(1rem, 1.6vw, 4rem);
+            }
         }
     }
 }
@@ -639,12 +652,12 @@ html, body {
 }
 
 #bike-name {
-    font-size: 2.5rem;
+    font-size: clamp(1rem, 2.1vw, 4rem); /*2.5rem;*/
     margin: 0;
     color: #333;
 }
 #bike-info label {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1vw, 4rem);; /*1.2rem;*/
     color: #555;
 }
 
