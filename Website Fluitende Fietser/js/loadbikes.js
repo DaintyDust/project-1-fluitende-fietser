@@ -94,7 +94,7 @@ function CloseShoppingCart() {
 
 function CreateItemInShoppingCart(Bikename, bikeprice, updatesession = true) {
     const newitem = document.createElement('div');
-    newitem.classList.add("shopping-cart-item");
+    newitem.classList.add("shopping-cart-item", "adding");
     const newimg = document.createElement('img');
     const formattedBikeName = Bikename.split(' ').join('_');
     newimg.src = `images/fietsen/${formattedBikeName}.jpg`;;
@@ -114,11 +114,16 @@ function CreateItemInShoppingCart(Bikename, bikeprice, updatesession = true) {
     removebtn.setAttribute("data-icon", "");
     removebtn.classList.add("shopping-cart-remove-button", "icon");
     removebtn.addEventListener('click', () => {
-        newitem.remove();
-        const index = shoppingcart.findIndex(item => item.Bikename === Bikename);
-        shoppingcart.splice(index, 1);
-        sessionStorage.setItem("shopping-cart", JSON.stringify(shoppingcart));
-        AddPriceToTotal();
+        newitem.classList.add('removing');
+        newitem.addEventListener("animationend", (event) => {
+            if (event.animationName === "removeItem") {
+                newitem.remove();
+                const index = shoppingcart.findIndex(item => item.Bikename === Bikename);
+                shoppingcart.splice(index, 1);
+                sessionStorage.setItem("shopping-cart", JSON.stringify(shoppingcart));
+                AddPriceToTotal(true);
+            }
+        })
     });
 
     newitem.appendChild(newimg);
@@ -128,9 +133,17 @@ function CreateItemInShoppingCart(Bikename, bikeprice, updatesession = true) {
     infodiv.appendChild(newnameh3);
     infodiv.appendChild(newprice);
     doc("shopping-cart-items").appendChild(newitem);
+
+    newitem.addEventListener("animationend", (event) => {
+        if (event.animationName === "addItem") {
+            newitem.classList.remove("adding");
+        }
+    });
     
     if (updatesession) {
-        const newbikeprice = parseFloat(bikeprice.replace('Prijs: €', ''));
+        const replacetext = bikeprice.replace(',', '.').replace('Prijs: €', '');
+        const newbikeprice = parseFloat(replacetext).toFixed(2);
+        console.log(replacetext, newbikeprice);
         const elementt = newitem.outerHTML;
         shoppingcart.push({Bikename, newbikeprice, elementt});
         sessionStorage.setItem("shopping-cart", JSON.stringify(shoppingcart));
@@ -138,17 +151,24 @@ function CreateItemInShoppingCart(Bikename, bikeprice, updatesession = true) {
     }
 }
 
-function AddPriceToTotal(price) {
+function AddPriceToTotal(deleteitem = false) {
     let itemcount = 0;
     let total = 0;
     shoppingcart.forEach(item => {
-        total += item.newbikeprice;
+        total += Number(item.newbikeprice);
         itemcount++;
     });
+    console.log(total);
     doc("shopping-cart-total-price").innerHTML = `Totaal: €${total.toFixed(2).replace('.', ',')}`;
     if (total > 0) {
         doc("open-shopping-cart").setAttribute("item-count", itemcount);
         doc("open-shopping-cart").classList.add("show-item-count");
+        if (deleteitem === false) {
+            doc("open-shopping-cart").classList.add("countUp");
+            doc("open-shopping-cart").addEventListener("animationend", () => {
+                doc("open-shopping-cart").classList.remove("countUp");
+            });
+        }
     } else {
         doc("open-shopping-cart").setAttribute("item-count", itemcount);
         doc("open-shopping-cart").classList.remove("show-item-count");
@@ -159,13 +179,13 @@ function addToCart() {
     const bikename = doc("bike-name").innerHTML;
     const bikeprice = doc("bike-price").innerHTML;
     CreateItemInShoppingCart(bikename, bikeprice);
-    AddPriceToTotal(bikeprice);
+    AddPriceToTotal();
     OpenShoppingCart();
 }
 
 function LoadShoppingCart() {
     shoppingcart.forEach(item => {
-        const pricelabeltext = `Prijs: €${item.newbikeprice}`;
+        const pricelabeltext = `Prijs: €${(item.newbikeprice).replace('.', ',')}`;
         CreateItemInShoppingCart(item.Bikename, pricelabeltext, false);
     });
     AddPriceToTotal();
