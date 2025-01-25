@@ -44,29 +44,6 @@ html, body {
     align-items: center;
 
 }
-@media (max-width: 720px) {
-    #header {
-        grid-template: "logo title search shopping-cart" 100% / clamp(5rem, 10%, 20%) 1fr 10vh;
-    }
-    #header-title {
-        display: none;
-    }
-    .search-container {
-        justify-self: center;
-    }
-}
-@media (max-width: 480px) {
-    #header {
-        grid-template: "search shopping-cart" 100% / 1fr 10vh;
-    }
-    #logo {
-        display: none;
-    }
-    .search-container {
-        justify-self: left;
-        padding-left: 10vw;
-    }
-}
 #footer {
     grid-area: footer;
     position: relative;
@@ -111,6 +88,8 @@ html, body {
     width: fit-content;
     height: 36%;
     width: 45%;
+    min-width: 180px;
+    max-width: 480px;
     display: flex;
     border-radius: 12px;
     transition: 0.1s;
@@ -121,8 +100,6 @@ html, body {
     & input[type=search] {
         /* height: calc(100% - 12px); */
         width: 100%;
-        min-width: 180px;
-        max-width: 480px;
         padding: 6px 6px 6px 12px;
         font-size: 1.8vh; /*1.0625rem; */
         border: none;
@@ -259,12 +236,6 @@ html, body {
         }
     }
 }
-@media (max-width: 1200px) {
-    #nav-menu a::before {
-        display: none !important;
-    }
-}
-
 @keyframes drive {
     0% {
         left: 0%;
@@ -308,14 +279,6 @@ html, body {
     position: absolute;
     font-size: clamp(1rem, calc(2vw + 2vh) / 3.5, 2rem);
 }
-@media (max-width: 480px) {
-    #KVK-Number {
-        display: none;
-    }
-    #Copyright {
-        display: none;
-    }  
-}
 #facebook-social {
     background: url(../images/facebook.png) no-repeat 50% 50%;
     background-size: contain;
@@ -350,17 +313,9 @@ html, body {
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
     z-index: 2;
-    @media (max-width: 1250px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    @media (max-width: 725px) {
-        grid-template-columns: 1fr;
-    }
-    @media (max-width: 400px) {
-        grid-template-columns: minmax(100px, 1fr); 
-    }
 }
 #shopping-cart-container {
+    --open-shopping-cart-width: 75%;
     position: absolute;
     height: calc(80% - 100px);
     align-self: center;
@@ -595,43 +550,6 @@ html, body {
     box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.1); /* 0 4px 8px rgba(0, 0, 0, 0.1); */
     padding: 20px;
     align-self: center;
-    @media (max-width: 1200px) {
-        grid-template-columns: 1fr 50px;
-        grid-template-rows: 50px auto 1fr;
-        #content-container {
-
-        }
-        #bike-image-container {
-            scale: 0.8;
-            grid-column: span 2;
-            grid-row: 2;
-            padding: 0;
-            height: auto;
-            min-height: 100%;
-            justify-self: center;
-        }
-        #bike-info-container {
-            grid-column: span 2;
-            grid-row: 3;
-            height: auto;
-            width: calc(100% - 40px);
-        }
-        #close-bigger-bike {
-            grid-column: 2;
-        }
-        #bike-buy-button {
-            justify-self: center;
-            justify-content: center;
-            width: 100%;
-            padding: 0;
-            & span {
-                font-size: clamp(0.6rem, 1.1vw, 4rem);
-            }
-            &::after {
-                font-size: clamp(1rem, 1.6vw, 4rem);
-            }
-        }
-    }
 }
 
 #bike-info-container {
@@ -1032,4 +950,137 @@ html, body {
     color: #ff4d4d;
     width: 45%;
     text-align: center;
+}
+
+
+/* responsive for phones etc */
+
+@media (max-width: 1600px) {
+    #nav-menu a::before {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    #shop-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #bigger-bike-container {
+        grid-template-columns: 1fr 50px;
+        grid-template-rows: 50px auto 1fr;
+        #bike-image-container {
+            scale: 0.8;
+            grid-column: span 2;
+            grid-row: 2;
+            padding: 0;
+            height: auto;
+            min-height: 100%;
+            justify-self: center;
+        }
+        #bike-info-container {
+            grid-column: span 2;
+            grid-row: 3;
+            height: auto;
+            width: calc(100% - 40px);
+        }
+        #close-bigger-bike {
+            grid-column: 2;
+        }
+        #bike-buy-button {
+            justify-self: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0;
+            & span {
+                font-size: clamp(0.6rem, 1.1vw, 4rem);
+            }
+            &::after {
+                font-size: clamp(1rem, 1.6vw, 4rem);
+            }
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    #header {
+        grid-template: "logo title search shopping-cart" 100% / clamp(5rem, 10%, 20%) 1fr 10vh;
+    }
+    #header-title {
+        display: none;
+    }
+    .search-container {
+        justify-self: center;
+    }
+    #shop-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    /* #header {
+        grid-template: "search shopping-cart" 100% / 1fr 10vh;
+    }
+    #logo {
+        display: none;
+    }
+    .search-container {
+        justify-self: left;
+        padding-left: 10vw;
+    } */
+    #main-container {
+        grid-template: "header" 10% "menu" 3.5vh "content" 1fr "footer" 10% / 1fr
+    }
+    #nav-menu {
+        border-radius: 0px !important;
+        height: 100% !important;
+        & ul {
+            flex-direction: row !important;
+            margin: 0 !important;
+        }
+        & li a {
+            border-radius: 0 !important;
+            border-bottom-right-radius: 14px !important;
+            border-bottom-left-radius: 14px !important;
+            transition: none !important;
+            &[selected] {
+                padding-left: 0 !important;
+                padding-top: 25% !important;
+            }
+            & span {
+                margin: 0 !important;
+            }
+            &:hover {
+                padding-left: 0 !important;
+                padding-top: 25% !important;
+            }
+        }
+    }
+    #header {
+        grid-template: "search shopping-cart" 100% / 1fr 10vh;
+    }
+    #logo {
+        display: none;
+    }
+    .search-container {
+        justify-self: left;
+        margin-left: 10vw;
+    }
+    #shopping-cart-container {
+        --open-shopping-cart-width: 10% !important;
+        height: calc(70% - 100px) !important;
+        margin-bottom: 20% !important;
+        width: 90% !important;
+    }
+    #shopping-cart-items {
+        width: calc(100% - 40px) !important;
+    }
+    #KVK-Number {
+        display: none;
+    }
+    #Copyright {
+        display: none;
+    }  
+    #shop-container {
+        grid-template-columns: minmax(100px, 1fr); 
+    }
 }

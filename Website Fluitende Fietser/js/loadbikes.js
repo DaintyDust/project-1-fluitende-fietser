@@ -84,7 +84,7 @@ function ToggleShoppingCart() {
 }
 
 function OpenShoppingCart() {
-    doc("shopping-cart-container").style.left = '75%';
+    doc("shopping-cart-container").style.left = 'var(--open-shopping-cart-width)';
     doc("open-shopping-cart").style.setProperty('--font-weight-before', '600');
 }
 function CloseShoppingCart() {
