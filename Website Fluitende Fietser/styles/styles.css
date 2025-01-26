@@ -1,9 +1,10 @@
 html, body {
-    margin: 0px;
+    margin: 0;
     overflow-x: hidden;
     font-size: 16px;
     background-color: #f9f9f9;
     position: relative;
+    height: 100%;
 }
 * {
     font-family: "Segoe UI", Tahoma, sans-serif;
@@ -19,13 +20,14 @@ html, body {
 }
 
 #main-container {
-    height: 100vh;
+    /* height: 100vh; */
+    min-height: 100%;
     width: 100vw;
     display: grid;
     /* grid-template: "header" 10% "content" auto "footer" 10%; */
     /* grid-template: "header header" 10% "menu content" 1fr "footer footer" 10% / minmax(10%, max-content) 1fr; */
-    grid-template: "header header" 10% "menu content" 1fr "footer footer" 10% / clamp(5rem, 10%, 20%) 1fr;
-    row-gap: 3%;
+    grid-template: "header header" 10vh "menu content" 1fr "footer footer" 10vh / clamp(5rem, 10vw, 20vw) 1fr;
+    row-gap: 3vh;
 }
 
 #header, #footer {
@@ -41,7 +43,7 @@ html, body {
     display: grid;
     /* grid-template: "test" 100% / 20% auto 20%; */
     /* grid-template: "logo title search" 100% / 8% 1fr 40%; */
-    grid-template: "logo title search shopping-cart" 100% / clamp(5rem, 10%, 20%) 1fr 1fr 10vh;
+    grid-template: "logo title search shopping-cart" 100% / clamp(5rem, 10vw, 20vw) 1fr 1fr 10vw;
     align-items: center;
     position: sticky;
     top: 0;
@@ -98,7 +100,7 @@ html, body {
     transition: 0.1s;
     &:has(input[type=search]:focus) {
         outline: 2px solid white;
-        box-shadow: 0px 0px 8px 6px rgb(255 255 255 / 30%);
+        box-shadow: 0 0 8px 6px rgb(255 255 255 / 30%);
     }
     & input[type=search] {
         /* height: calc(100% - 12px); */
@@ -108,7 +110,7 @@ html, body {
         border: none;
         background-color: #949494;
         color: white;
-        border-radius: 12px 0px 0px 12px;
+        border-radius: 12px 0 0 12px;
         &:focus {
             outline: none;
             &::-webkit-search-cancel-button {
@@ -136,7 +138,7 @@ html, body {
         height: 100%;
         padding: 6px 10px;
         padding: 0;
-        border-radius: 0px 12px 12px 0px;
+        border-radius: 0 12px 12px 0;
         background: #949494;
         border: none;
         cursor: pointer;
@@ -161,7 +163,7 @@ html, body {
     border-bottom-right-radius: 20px;
     height: max-content;
     position: sticky;
-    top: 13%;
+    top: 13vh;
     transform: translateY(-3.1vh);
     z-index: 9;
     & ul {
@@ -170,7 +172,7 @@ html, body {
         align-items: center;
         justify-content: space-evenly;
         list-style: none;
-        margin: 0px;
+        margin: 0;
         margin-bottom: 10px;
         padding:0px;
         font-size: 1.71rem; 
@@ -191,7 +193,7 @@ html, body {
                 font-size: clamp(1rem, calc(2vw + 2vh) / 2, 3.5rem);
                 &[selected] {
                     background-color: #e3e3e3;
-                    box-shadow: 0 0px 8px 0px rgb(255 255 255 / 30%);
+                    box-shadow: 0 0 8px 0 rgb(255 255 255 / 30%);
                     z-index: 2;
                     position: relative;
                     color: #555;
@@ -207,7 +209,7 @@ html, body {
                 }
                 &:hover {
                     background-color: #7d7d7d;
-                    box-shadow: 0 0px 8px 0px rgb(255 255 255 / 30%);
+                    box-shadow: 0 0 8px 0 rgb(255 255 255 / 30%);
                     padding-left: 15%; /* 25px */
                 }
 
@@ -263,7 +265,7 @@ html, body {
 #driving-bike {
     height: 50%;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     /* animation: drive 20s linear infinite; */
 }
 #footer-links {
@@ -321,38 +323,49 @@ html, body {
     z-index: 2;
 }
 #shopping-cart-container {
-    --open-shopping-cart-width: 75%;
+    --open-shopping-cart-width: calc(100% - var(--shopping-cart-width)); /* 75% */
     position: absolute;
     height: calc(80% - 100px);
     align-self: center;
     background-color: #9c9c9c;
     border-top-left-radius: 14px;
     border-bottom-left-radius: 14px;
-    width: 25%;
+    width: 30.1%; /* 25% */
+    min-width: max-content;
     left: 100%;
     transition: left 0.5s;
-    z-index: 3;
+    z-index: 3; 
+    position: fixed;
+    top: 50%;
+    bottom: 50%;
 }
 #shopping-cart {
-    width: 100%;
+    width: calc(100% - 40px);
     height: calc(100% - 40px);
     margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 14%;
+    grid-template-rows: 10% 1fr 20%;
     & h1 {
+        margin: 0;
         padding-left: 20px;
         color: #fff;
+        line-height: 100%;
     }
 }
 #shopping-cart-total {
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 9%;
-    padding: 20px;
+    width: calc(100% + 40px); /* 100% */
+    height: 100%; /* 9% */
+    /* padding: 20px; */
     border-top: 5px solid;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    grid-column: span 2;
+    margin-left: -20px;
 }
 #shopping-cart-total-price {
     font-size: x-large;
@@ -379,8 +392,10 @@ html, body {
     display: flex;
     flex-direction: column;
     gap: 2%;
-    width: calc(100% - 20px);
-    height: calc(81% - 60px);
+    width: calc(100% + 20px); /* calc(100% - 20px) */
+    height: 95%; /* calc(81% - 60px) */
+    grid-column: span 2;
+    margin-top: 5%;
     overflow-y: auto;
     scrollbar-gutter: stable;
 }
@@ -443,6 +458,7 @@ html, body {
     & h3 {
         color: #333;
         margin: 0;
+        font-size: clamp(1rem, 1vw, 4rem);
     }
 }
 .flex-spacer {
@@ -458,9 +474,14 @@ html, body {
     }
 }
 #close-shopping-cart {
-    position: absolute;
+    /* position: absolute;
     top: 20px;
-    right: 20px;
+    right: 20px; */
+    width: 100%;
+    max-width: 50px;
+    height: auto;
+    aspect-ratio: 1/1;
+    justify-self: end;
 }
 
 @keyframes countUp {
@@ -556,7 +577,7 @@ html, body {
 
     background-color: #f9f9f9;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.1); /* 0 4px 8px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 0 10px 8px rgba(0, 0, 0, 0.1); /* 0 4px 8px rgba(0, 0, 0, 0.1); */
     padding: 20px;
     align-self: center;
 }
@@ -673,7 +694,7 @@ html, body {
     cursor: pointer;
     border: 2px solid #ddd;
     text-align: center;
-    box-shadow: 0px 0px 8px 6px rgb(119 119 119 / 10%);
+    box-shadow: 0 0 8px 6px rgb(119 119 119 / 10%);
     transition: border 0.2s;
     & img {
         margin-inline: 32px;
@@ -724,7 +745,7 @@ html, body {
 #about-us-text {
     padding: 20px;
     line-height: 1.6;
-    font-size: 19px;
+    font-size: clamp(1rem, 1vw, 4rem); /* 19px */
     height: fit-content;
     color: #f9f9f9;
     background-color: #949494;
@@ -744,7 +765,7 @@ html, body {
     /* margin-top: 150px; */
     border-radius: 14px;
     border: solid #b0b0b0;
-    box-shadow: 0px 0px 8px 8px rgb(119 119 119 / 10%);
+    box-shadow: 0 0 8px 8px rgb(119 119 119 / 10%);
     object-fit: contain;
 }
 
@@ -809,7 +830,7 @@ html, body {
     content: attr(data-icon);
     font-family: "FontAwesome";
     font-family: 'Font Awesome 6 Pro';
-    font-size: 18px;
+    font-size: clamp(1rem, 1vw, 4rem); /* 18px; */
     height: auto;
     z-index: 2;
     position: relative;
@@ -818,7 +839,7 @@ html, body {
     content: attr(data-icon);
     font-family: "FontAwesome";
     font-family: 'Font Awesome 6 Pro';
-    font-size: 18px;
+    font-size: clamp(1rem, 1vw, 4rem); /* 18px; */
     height: auto;
     z-index: 2;
     position: relative;
@@ -845,8 +866,8 @@ html, body {
 }
 #sliding-page-number {
     position: absolute;
-    left: 0px;
-    right: 0px;
+    left: 0;
+    right: 0;
     bottom: 22px;
     display: flex;
     justify-content: center;
@@ -976,7 +997,6 @@ html, body {
     }
     @container opening-times-container (width < 240px) {
         #opening-times-display {
-            background-color: red !important;
             width: 70%;
             height: 70%;
         }
@@ -985,12 +1005,9 @@ html, body {
 
 
 @media (max-width: 1000px) {
-    body {
-        
-    }
     #bigger-bike-container {
-        grid-template-columns: 1fr 50px;
-        grid-template-rows: 50px auto 1fr;
+        grid-template-columns: 1fr 10%;
+        grid-template-rows: 10% auto 1fr;
         #bike-image-container {
             scale: 0.8;
             grid-column: span 2;
@@ -1030,7 +1047,7 @@ html, body {
 
 @media (max-width: 720px) {
     #header {
-        grid-template: "logo title search shopping-cart" 100% / clamp(5rem, 10%, 20%) 1fr 10vh;
+        grid-template: "logo title search shopping-cart" 100% / clamp(5rem, 10vw, 20vw) 1fr 10vw;
     }
     #header-title {
         display: none;
@@ -1055,10 +1072,10 @@ html, body {
         padding-left: 10vw;
     } */
     #main-container {
-        grid-template: "header" 10% "menu" 3.5vh "content" 1fr "footer" 10% / 1fr
+        grid-template: "header" 10vh "menu" 3.5vh "content" 1fr "footer" 10vh / 1fr
     }
     #nav-menu {
-        border-radius: 0px;
+        border-radius: 0;
         height: 100%;
         & ul {
             flex-direction: row;
@@ -1084,7 +1101,7 @@ html, body {
         }
     }
     #header {
-        grid-template: "search shopping-cart" 100% / 1fr 10vh;
+        grid-template: "search shopping-cart" 100% / 1fr 10vw;
     }
     #logo {
         display: none;
@@ -1094,13 +1111,12 @@ html, body {
         margin-left: 10vw;
     }
     #shopping-cart-container {
-        --open-shopping-cart-width: 10% !important;
         height: calc(70% - 100px) !important;
         margin-bottom: 20% !important;
         width: 90% !important;
     }
     #shopping-cart-items {
-        width: calc(100% - 40px) !important;
+        width: 100% !important;
     }
     #KVK-Number {
         display: none;

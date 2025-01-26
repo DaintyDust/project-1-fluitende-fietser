@@ -142,16 +142,17 @@ function addToCart() {
     OpenShoppingCart();
 }
 
-function LoadShoppingCart() {
+async function LoadShoppingCart() {
     shoppingcart.forEach(item => {
         const pricelabeltext = `Prijs: €${(item.newbikeprice).replace('.', ',')}`;
         CreateItemInShoppingCart(item.Bikename, pricelabeltext, false);
     });
-    AddPriceToTotal();
+    await AddPriceToTotal();
+    doc("shopping-cart-container").style.left = '100%';
+    doc("shopping-cart-container").style.setProperty('--shopping-cart-width', doc("shopping-cart-container").offsetWidth + 'px');
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    doc("shopping-cart-container").style.left = '100%';
     LoadShoppingCart();
     
     if (SearchBtnMode) {
@@ -164,6 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         doc("search").addEventListener('input', SearchBikes);
     }
-
+    
     DriveAnimation(doc("driving-bike"));
+});
+
+window.addEventListener('resize', () => {
+    doc("shopping-cart-container").style.setProperty('--shopping-cart-width', doc("shopping-cart-container").offsetWidth + 'px');
 });
