@@ -19,8 +19,9 @@
             <label id="header-title">De Fluitende Fietser</label>
             <div class="search-container">
                 <input type="search" placeholder="Search.." name="search" id="search">
-                <button id="search-btn"><img src="images/search.png" alt="search-image"></button>
+                <button id="search-btn" class="icon" data-icon=""></button>
             </div>
+            <button id="open-shopping-cart" class="icon" data-icon="" item-count="0" show-item-count="true" onclick="ToggleShoppingCart()"></button>
         </header>
         <nav id="nav-menu">
             <ul>
@@ -34,10 +35,12 @@
         <div id="content-container" class="flex homepage">
 
             <div id="homepage-left-container">
-                <div id="sliding-images-container">
+                <div id="homepage-sliding-container">
                     <button id="previous-sliding-image" class="icon" data-icon="" onclick="previousSlide(true)"></button>
-                    <div id="sliding-images-items">
+                    <div id="sliding-images-container">
+                        <div id="sliding-images-items">
     
+                        </div>
                     </div>
                     <button id="next-sliding-image" class="icon" data-icon="" onclick="nextSlide(true)"></button>
                     <div id="sliding-page-number">
@@ -57,6 +60,18 @@
             </div>
             <div id="homepage-text-container">
 
+            </div>
+            <div id="shopping-cart-container">
+                <div id="shopping-cart">
+                    <h1 id="shopping-cart-title">Winkelwagen</h1>
+                    <button id="close-shopping-cart" class="close-btn icon" data-icon="" onclick="CloseShoppingCart()"></button>
+                    <div id="shopping-cart-items">
+                    </div>
+                    <div id="shopping-cart-total">
+                        <label id="shopping-cart-total-price">Totaal: €0</label>
+                        <button id="shopping-cart-buy-button">Kopen</button>
+                    </div>
+                </div>
             </div>
         </div>
         <footer id="footer">

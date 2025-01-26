@@ -24,7 +24,8 @@ html, body {
     display: grid;
     /* grid-template: "header" 10% "content" auto "footer" 10%; */
     /* grid-template: "header header" 10% "menu content" 1fr "footer footer" 10% / minmax(10%, max-content) 1fr; */
-    grid-template: "header header" 10% "menu content" 1fr "footer footer" 10% / clamp(5rem, 10%, 20%) 1fr
+    grid-template: "header header" 10% "menu content" 1fr "footer footer" 10% / clamp(5rem, 10%, 20%) 1fr;
+    row-gap: 3%;
 }
 
 #header, #footer {
@@ -42,7 +43,9 @@ html, body {
     /* grid-template: "logo title search" 100% / 8% 1fr 40%; */
     grid-template: "logo title search shopping-cart" 100% / clamp(5rem, 10%, 20%) 1fr 1fr 10vh;
     align-items: center;
-
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 #footer {
     grid-area: footer;
@@ -52,15 +55,15 @@ html, body {
 #content-container {
     height: 100%;
     grid-area: content;
-    overflow-y: auto; 
+    /* overflow-y: auto;  */
 }
 #content-container.flex {
     display: flex;
     justify-content: center;
 }
 #content-container.homepage {
-    gap: 5%;
-    padding-inline: 50px;
+    gap: 4vw; /* 5% */
+    padding-inline: 3vw; /* 50px; */
 }
 
 #logo {
@@ -157,7 +160,10 @@ html, body {
     background-color: #949494;
     border-bottom-right-radius: 20px;
     height: max-content;
-    /* overflow: hidden; */
+    position: sticky;
+    top: 13%;
+    transform: translateY(-3.1vh);
+    z-index: 9;
     & ul {
         display: flex;
         flex-direction: column;
@@ -538,6 +544,9 @@ html, body {
 #bigger-bike-container {
     height: calc(100% - 100px);
     width: calc(100% - 100px);
+    min-height: min-content;
+    max-height: max-content;
+    height: -webkit-fill-available;
     /* margin: 50px; */
     display: none;
     align-items: center;
@@ -555,6 +564,7 @@ html, body {
 #bike-info-container {
     width: 100%;
     height: 64%;
+    min-height: max-content;
     grid-column: 2;
     grid-row-start: 2;
     grid-row-end: 5;
@@ -576,7 +586,7 @@ html, body {
     color: #333;
 }
 #bike-info label {
-    font-size: clamp(1rem, 1vw, 4rem);; /*1.2rem;*/
+    font-size: clamp(1rem, 1vw, 4rem); /*1.2rem;*/
     color: #555;
 }
 
@@ -650,7 +660,6 @@ html, body {
         border-radius: 20px;
     }
 }
-
 .shop-button {
     /* width: 20%;
     height: 30%; */
@@ -741,14 +750,20 @@ html, body {
 
 #homepage-left-container {
     width: 44%;
-    margin: 50px auto;
+    /* margin: 50px auto; */
     /* padding: 20px; */
     display: flex;
     flex-direction: column;
     gap: 10%;
 }
 #sliding-images-container {
+    width: calc(100% - 40px);
+    height: 100%;
+    overflow: hidden;
+}
+#homepage-sliding-container {
     display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
     width: calc(100% - 40px); /*100%;*/ /*44%;*/ /*30%;*/
@@ -814,6 +829,8 @@ html, body {
     z-index: 2;
     &::before {
         translate: 20px 0;
+        position: absolute;
+        left: 0;
     }
 }
 #next-sliding-image {
@@ -822,6 +839,8 @@ html, body {
     z-index: 2;
     &::before {
         translate: -20px 0;
+        position: absolute;
+        right: 0;
     }
 }
 #sliding-page-number {
@@ -853,49 +872,20 @@ html, body {
 
 #homepage-text-container {
     position: relative;
-    width: 30%;
-    height: 35%;
-    margin: 50px;
-    padding: 20px;
-    background-color: #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-#homepage-text-container {
-    position: relative;
     width: 60%;
-    height: auto;
-    margin: 50px auto;
+    height: fit-content;
+    min-height: -webkit-fill-available;
+    background-color: #fff;
+    /* margin: 50px auto; */
     padding: 20px;
-    background-color: #ddd;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 #homepage-text-container p {
     margin: 0;
     padding: 10px 0;
     font-size: 1.2rem;
-}
-
-#homepage-text-container {
-    position: relative;
-    width: 60%;
-    height: fit-content;
-    min-height: -webkit-fill-available;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-#homepage-text-container h2 {
-    text-align: center;
-    color: #007bff;
 }
 
 #homepage-opening-hours-container {
@@ -912,6 +902,7 @@ html, body {
     display: flex;
     flex-direction: column;
     width: 47%;
+    padding-block: 1.35vw;
 }
 #homepage-opening-view {
     display: flex;
@@ -921,6 +912,8 @@ html, body {
     margin: 20px;
     align-items: center;
     justify-content: center;
+    container-name: opening-times-container;
+    container-type: size;
 }
 #opening-times-display {
     width: 50%;
@@ -933,7 +926,7 @@ html, body {
     background-color: #228a61;
     border: 3px solid #24bd61;
     & span {
-        font-size: 28px;
+        font-size: clamp(1.5rem, 1vw, 4rem); /* 28px */
     }
 }
 #opening-times-display.store-closed {
@@ -943,8 +936,9 @@ html, body {
 .opening-hours-item {
     display: flex;
     justify-content: space-between;
-    padding: 2.5px 20px;
-    font-size: 1.2rem;
+    padding: 0.12vw 1vw; /*2.5px 20px;*/
+    font-size: clamp(1rem, 1vw, 4rem); /* 1.2rem; */
+    white-space: nowrap;
 }
 .store-closed-text {
     color: #ff4d4d;
@@ -965,6 +959,35 @@ html, body {
     #shop-container {
         grid-template-columns: repeat(2, 1fr);
     }
+    #content-container.homepage {
+        flex-direction: column;
+    }
+    #homepage-left-container, #homepage-text-container {
+        width: -webkit-fill-available;
+        margin: 0;
+        min-height: max-content;
+        gap: 5%;
+    }
+    #opening-times-display {
+        height: 15vh;
+        & span {
+            padding-block: 1vh;
+        }
+    }
+    @container opening-times-container (width < 240px) {
+        #opening-times-display {
+            background-color: red !important;
+            width: 70%;
+            height: 70%;
+        }
+    }
+}
+
+
+@media (max-width: 1000px) {
+    body {
+        
+    }
     #bigger-bike-container {
         grid-template-columns: 1fr 50px;
         grid-template-rows: 50px auto 1fr;
@@ -974,8 +997,12 @@ html, body {
             grid-row: 2;
             padding: 0;
             height: auto;
-            min-height: 100%;
+            max-height: 100%;
             justify-self: center;
+            object-fit: contain;
+            & img {
+                object-fit: contain;
+            }
         }
         #bike-info-container {
             grid-column: span 2;
@@ -1031,11 +1058,12 @@ html, body {
         grid-template: "header" 10% "menu" 3.5vh "content" 1fr "footer" 10% / 1fr
     }
     #nav-menu {
-        border-radius: 0px !important;
-        height: 100% !important;
+        border-radius: 0px;
+        height: 100%;
         & ul {
-            flex-direction: row !important;
-            margin: 0 !important;
+            flex-direction: row;
+            margin: 0;
+            align-items: flex-start;
         }
         & li a {
             border-radius: 0 !important;
@@ -1082,5 +1110,17 @@ html, body {
     }  
     #shop-container {
         grid-template-columns: minmax(100px, 1fr); 
+    }
+    #homepage-opening-hours-container {
+        flex-direction: column;
+        min-height: max-content;
+        height: -webkit-fill-available;
+    }
+    #homepage-opening-hours {
+        width: 70%;
+    }
+    #homepage-opening-view {
+        width: 70%;
+        height: 50%;
     }
 }
