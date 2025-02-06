@@ -15,7 +15,7 @@ function SearchBikes() {
 function DriveAnimation(element) {
     let position = 0;
     let direction = 1;
-    const speed = 0.2; 
+    const speed = 0.1; 
 
     function frame() {
         if (position >= 96 && direction === 1) {
