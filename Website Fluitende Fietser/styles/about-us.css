@@ -21,6 +21,9 @@
         width: 100%;
         margin: 20px 0;
     }
+    #about-us-body {
+        min-height: fit-content;
+    }
 
     
 }
