@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="styles/rent.css">
     <script src="https://kit.fontawesome.com/79433d6630.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
     <link rel="icon" type="image/x-icon" href="images/FluitendeFietserLogo-Transparant.png">
     <script src="js/main.js"></script>
+    <script src="js/rent.js" defer></script>
     <title>Fiets verhuur</title>
 </head>
 <body>
@@ -32,18 +33,20 @@
             </ul>
         </nav>
         <div id="content-container">
-            <div id="shopping-cart-container">
-                <div id="shopping-cart">
-                    <h1 id="shopping-cart-title">Winkelwagen</h1>
-                    <button id="close-shopping-cart" class="close-btn icon" data-icon="" onclick="CloseShoppingCart()"></button>
-                    <div id="shopping-cart-items">
-                    </div>
-                    <div id="shopping-cart-total">
-                        <label id="shopping-cart-total-price">Totaal: €0</label>
-                        <button id="shopping-cart-buy-button">Kopen</button>
-                    </div>
-                </div>
-            </div>
+            <form id="bike-rental-form">
+                <table id="bike-rental-table">
+                    <thead>
+                        <tr>
+                            <th>Selecteer</th>
+                            <th>Type Fiets</th>
+                            <th>Prijs per dag</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bike-rental-tbody">
+                    </tbody>
+                </table>
+                <button id="reserve-button" type="submit">Reserveer een fiets</button>
+            </form>
         </div>
         <footer id="footer">
             <div id="footer-links">
@@ -53,13 +56,13 @@
                 </div>
                 <a id="facebook-social" href="https://www.facebook.com/fietsmagazine"></a>
                 <div class="column">
-                    <a id="mailto-link" class="footer-link" href= "mailto:info@fluitendefietser.nl">info@fluitendefietser.nl</a>
+                    <a id="mailto-link" class="footer-link" href= "mailto: info@fluitendefietser.nl">info@fluitendefietser.nl</a>
                     <a id="terms_and_conditions-link" class="footer-link" href="terms-and-conditions.html">Algemene Voorwaarden</a>
                 </div>
             </div>
-            <label id="Copyright">&copy; 2022 Fluitende Fietser</label>
-            <label id="KVK-Number">KVK: 88599665 | BTW NL999888492Z09</label>
-            <img id="driving-bike" src="images/fietser-nb.png" alt="driving-bike">
+            <label>&copy; 2022 Fluitende Fietser</label>
+            <label>KVK: 88599665 | BTW NL999888492Z09</label>
+            <img id="driving-bike" src="images/fietser-nb.png" alt="Fietser">
         </footer>
     </div>
 </body>

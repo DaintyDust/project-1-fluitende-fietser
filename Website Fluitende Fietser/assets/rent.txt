@@ -1,0 +1,12 @@
+
+Aanhangfiets, €20
+Bakfiets, €35
+Driewielfiets, €30
+Elektrische fiets, €30
+Kinderfiets, €15
+Ligfiets, €45
+Omafiets, €12,50
+Racefiets, €15
+Speed pedelec, €15
+Stadsfiets, €12,50
+Vouwfiets, €10

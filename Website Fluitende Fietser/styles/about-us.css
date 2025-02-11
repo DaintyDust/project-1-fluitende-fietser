@@ -49,15 +49,18 @@
 
 @media (max-width: 1200px) {
     #about-us {
-        flex-direction: column;
+        flex-direction:column;
         align-items: center;
     }
     #about-us-content {
         width: 100%;
         margin: 20px 0;
+        min-height: fit-content;
     }
     #about-us-image-container {
         width: 100%;
         margin: 20px 0;
-    }    
+    }
+  
+    
 }
