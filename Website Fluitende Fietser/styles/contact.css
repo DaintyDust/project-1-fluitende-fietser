@@ -1,0 +1,94 @@
+#contact-container {
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+    width: -webkit-fill-available;
+    height: calc(100% - 100px);
+    gap: 5%;
+    color: #fff;
+    font-size: clamp(1rem, 2vw, 4rem);
+    & input, textarea {
+        background-color: #d9d9d9;
+        border: none;
+        border-radius: 10px;
+        padding: 1vh 1vw;
+        outline: none;
+        height: 100%;
+        font-size: clamp(1rem, 1vw, 4rem);
+        resize: none;
+    }
+    & div:has(input[required]) label:first-child:after, & div:has(textarea[required]) label::after {
+        content: "*";
+        color: red;
+    }
+}
+#contact-us-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 5%;
+    background-color: #949494;
+    width: 47.5%;
+    height: calc(100% - 60px);
+    padding: 30px 20px 30px 20px;
+    border-radius: 10px;
+    & div {
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+        width: 47.5%;;
+    }
+}
+#store-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 5%;
+    background-color: #949494;
+    width: 47.5%;
+    height: calc(100% - 60px);
+    padding: 30px 20px 30px 20px;
+    border-radius: 10px;
+    & div {
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+        width: 47.5%;
+    }
+    & div:nth-child(1), div:nth-child(2), div:nth-child(3) {
+        height: 20%;
+    }
+    & div:nth-child(4), & div:nth-child(5) {
+        height: 45%;
+    }
+    & iframe {
+        height: 100%;
+        border-radius: 10px;
+        border: none;
+    }
+    & input, & textarea {
+        color: #000;
+    }
+}
+
+#contact-us-name {
+    height: 20%;
+}
+#contact-us-lastname {
+    height: 20%;
+}
+#contact-us-email {
+    height: 25%;
+    & .contact-us-info {
+        font-size: clamp(1rem, 0.5vw, 3rem);
+        color: #e4e4e4;
+    }
+}
+#contact-us-question {
+    height: 50%;
+}
+#contact-us-sumbit {
+    width: 100%;
+}

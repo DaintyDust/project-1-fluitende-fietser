@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/contact.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <script src="https://kit.fontawesome.com/79433d6630.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
     <link rel="icon" type="image/x-icon" href="images/FluitendeFietserLogo-Transparant.png">
     <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
     <title>Contact us</title>
 </head>
 <body>
@@ -32,6 +34,52 @@
             </ul>
         </nav>
         <div id="content-container">
+            <div id="contact-container">
+                <form id="contact-us-container" action="/action_page.php">
+                    <div id="contact-us-name">
+                        <label>Voornaam</label>
+                        <input type="text" placeholder="Voornaam" required>
+                    </div>
+                    <div id="contact-us-lastname">
+                        <label>Achternaam</label>
+                        <input type="text" placeholder="Achternaam" required>
+                    </div>
+                    <div id="contact-us-email">
+                        <label>Email</label>
+                        <input type="email" placeholder="Email" required>
+                        <label class="contact-us-info">Voer een geldig email adress in.</label>
+                    </div>
+                    <div id="contact-us-question">
+                        <label>Vraag</label>
+                        <textarea type="text" required></textarea>
+                    </div>
+                    <div id="contact-us-sumbit">
+                        <input type="submit" value="Submit">
+                    </div>
+                  </form>                   
+                <div id="store-info-container">
+                    <div>
+                        <label>Adress</label>
+                        <input id="contact-info-adress" type="text" disabled>
+                    </div>
+                    <div>
+                        <label>E-mailadress</label>
+                        <input id="contact-info-email" type="email" disabled>
+                    </div>
+                    <div>
+                        <label>TelefoonNummer</label>
+                        <input id="contact-info-phonenumber" type="tel" disabled>
+                    </div>
+                    <div>
+                        <label>Openingstijden</label>
+                        <textarea id="contact-info-opentimes" type="text" disabled></textarea>
+                    </div>
+                    <div>
+                        <label>Locatie</label>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.555166185209!2d5.493734777245807!3d51.46632321370261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6d8d3f3dacee7%3A0x1acd712bb57b8792!2sSterrenlaan%2010%2C%205631%20KA%20Eindhoven!5e0!3m2!1snl!2snl!4v1738925251590!5m2!1snl!2snl"></iframe>
+                    </div>
+                </div>
+            </div>
             <div id="shopping-cart-container">
                 <div id="shopping-cart">
                     <h1 id="shopping-cart-title">Winkelwagen</h1>
