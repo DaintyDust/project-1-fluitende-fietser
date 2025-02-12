@@ -8,15 +8,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 const [type, price] = line.split(',');
                 if (type && price) {
                     const row = document.createElement('tr');
+                    // row.innerHTML = `
+                    //     <td><input type="checkbox" id=rentbike${lines.indexOf(line)} name="bike" value="${type.trim()}"></td>
+                    //     <td>${type.trim()}</td>
+                    //     <td>${price.trim()}</td>
+                    // `;
                     row.innerHTML = `
-                        <td><input type="checkbox" id=rentbike${lines.indexOf(line)} name="bike" value="${type.trim()}"></td>
-                        <td>${type.trim()}</td>
-                        <td>${price.trim()}</td>
-                    `;
+                    <td>
+                      <label class="checkbox">
+                        <input type="checkbox" id=rentbike${lines.indexOf(line)} name="bike" value="${type.trim()}">
+                        <div class="checkbox-wrapper">
+                        <div class="checkbox-bg"></div>
+                        <svg fill="none" viewBox="0 0 24 24" class="checkbox-icon">
+                            <path
+                            stroke-linejoin="round"
+                            stroke-linecap="round"
+                            stroke-width="3"
+                            stroke="currentColor"
+                            d="M4 12L10 18L20 6"
+                            class="check-path"
+                            ></path>
+                        </svg>
+                        </div>
+                    </label>
+                    </td>
+                    <td>${type.trim()}</td>
+                    <td>${price.trim()}</td>
+                `;
                     tbody.appendChild(row);
-                    row.addEventListener('click', function() {
+                    row.addEventListener('click', function(event) {
+                        event.preventDefault()
                         var checkbox = doc(`rentbike${lines.indexOf(line)}`);
-                        checkbox.checked = !checkbox.checked;
+                        checkbox.checked = !row.classList.contains('checkbox-selected');
                         row.classList.toggle('checkbox-selected');
                     });
                 }
