@@ -84,13 +84,14 @@ td label {
     padding: 10px 20px;
     font-size: 16px;
     color: white;
-    background-color: #9ddbeb;
+    background-color: #007bff; /*#9ddbeb;*/
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 600;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3 s;
 }
 
 #reserve-button:hover {

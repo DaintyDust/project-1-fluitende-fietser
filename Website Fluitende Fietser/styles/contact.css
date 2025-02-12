@@ -1,9 +1,10 @@
 #contact-container {
     display: flex;
     flex-direction: row;
-    margin: 50px;
+    margin-inline: 50px;
+    margin-block: 5px;
     width: -webkit-fill-available;
-    height: calc(100% - 100px);
+    height: calc(100% - 10px);
     gap: 5%;
     color: #fff;
     font-size: clamp(1rem, 2vw, 4rem);

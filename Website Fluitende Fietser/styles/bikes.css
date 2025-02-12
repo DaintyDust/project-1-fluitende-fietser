@@ -25,6 +25,15 @@
     box-shadow: 0 0 10px 8px rgba(0, 0, 0, 0.1); /* 0 4px 8px rgba(0, 0, 0, 0.1); */
     padding: 20px;
     align-self: center;
+    transition: opacity 0.3s ease, transform 0.2s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    &.opened {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
 }
 
 #bike-info-container {
@@ -68,6 +77,19 @@
     &:hover {
         border: 2px solid #adadad;
     }
+}
+#shop-container {
+    display: grid;
+    justify-content: center;
+    height: calc(100% - 20px); /*100%;*/
+    width: -webkit-fill-available;
+    margin-inline: 50px;
+    margin-block: 10px;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-rows: 1fr 1fr;            
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    z-index: 2;
 }
 
 #bike-info {

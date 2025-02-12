@@ -19,8 +19,6 @@ function LoadBikes() {
 
 
 function OpenBikeInfo(bikename, bikebrand, bikeprice, biketype, bikecolor, bikegender, driveoffer, isnew, bikecode, bikecommentary) {
-    doc("shop-container").style.display = 'none';
-    doc("bigger-bike-container").style.display = 'grid';
     doc("bike-name").innerHTML = bikename;
     doc("bike-brand").innerHTML = `Merk: ${bikebrand}`;
     doc("bike-price").innerHTML = `Prijs: €${bikeprice}`;
@@ -33,10 +31,20 @@ function OpenBikeInfo(bikename, bikebrand, bikeprice, biketype, bikecolor, bikeg
     doc("bike-commentary").innerHTML = `Opmerking: ${bikecommentary}`;
     const formattedBikeName = bikename.split(' ').join('_');
     doc("bigger-bike-image").src = `images/fietsen/${formattedBikeName}.jpg`;
+
+
+    doc("shop-container").style.display = 'none';
+    doc("bigger-bike-container").style.display = 'grid';
+    setTimeout(() => {
+        doc("bigger-bike-container").classList.add('opened');
+    }, 10);
 }
 function CloseBikeInfo() {
-    doc("shop-container").style.display = 'grid';
-    doc("bigger-bike-container").style.display = 'none';
+    doc("bigger-bike-container").classList.remove('opened');
+    setTimeout(() => {
+        doc("shop-container").style.display = 'grid';
+        doc("bigger-bike-container").style.display = 'none';
+    }, 200);
 }
 
 function addBike(bikename) {
