@@ -23,7 +23,11 @@ document.addEventListener("DOMContentLoaded", function() {
             for (const opentimesperday of texts) {
                 const [day, opentime, closetime] = opentimesperday.split(",");
 
-                doc("contact-info-opentimes").value += `${day}: ${opentime} - ${closetime}\n`;
+                if (opentime == "gesloten") {
+                    doc("contact-info-opentimes").value += `${day}: ${opentime}\n`;
+                } else {
+                    doc("contact-info-opentimes").value += `${day}: ${opentime} - ${closetime}\n`;
+                }
             }
 
             doc("contact-info-opentimes").value = doc("contact-info-opentimes").value.trim();
