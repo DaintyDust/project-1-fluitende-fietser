@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/rent.css">
+    <link rel="stylesheet" href="styles/about-us.css">
     <script src="https://kit.fontawesome.com/79433d6630.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
     <link rel="icon" type="image/x-icon" href="images/FluitendeFietserLogo-Transparant.png">
     <script src="js/main.js"></script>
-    <script src="js/rent.js" defer></script>
-    <title>Fiets verhuur</title>
+    <script src="js/aboutus.js"></script>
+    <title>Fluitende Fietser</title>
 </head>
+
 <body>
     <div id="main-container">
         <header id="header">
@@ -25,28 +27,11 @@
         </header>
         <nav id="nav-menu">
             <ul>
-                <li><a href="index.html" class="icon-hover" data-icon=""><span>Home</span></a></li>
-                <li><a href="bikes.html" class="icon-hover" data-icon=""><span>Fietsen</span></a></li>
-                <li><a href="rent.html" selected class="icon" data-icon=""><span>Verhuur</span></a></li>
-                <li><a href="contact.html" class="icon-hover" data-icon=""><span>Contact</span></a></li>
-                <li><a href="about-us.html" class="icon-hover" data-icon=""><span>Over ons</span></a></li>
+                <li><a href="rent.html" class="icon-hover"><span>terug</span></a></li>
+             
             </ul>
         </nav>
-        <div id="content-container">
-            <form id="bike-rental-form">
-                <table id="bike-rental-table">
-                    <thead>
-                        <tr>
-                            <th>Selecteer</th>
-                            <th>Type Fiets</th>
-                            <th>Prijs per dag</th>
-                        </tr>
-                    </thead>
-                    <tbody id="bike-rental-tbody">
-                    </tbody>
-                </table>
-                <button onclick="Rentbikes()" id="reserve-button" type="submit">Reserveer een fiets</button>
-            </form>
+       
             <div id="shopping-cart-container">
                 <div id="shopping-cart">
                     <h1 id="shopping-cart-title">Winkelwagen</h1>
@@ -78,4 +63,5 @@
         </footer>
     </div>
 </body>
+
 </html>

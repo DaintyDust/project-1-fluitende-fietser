@@ -8,15 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const [type, price] = line.split(',');
                 if (type && price) {
                     const row = document.createElement('tr');
-                    // row.innerHTML = `
-                    //     <td><input type="checkbox" id=rentbike${lines.indexOf(line)} name="bike" value="${type.trim()}"></td>
-                    //     <td>${type.trim()}</td>
-                    //     <td>${price.trim()}</td>
-                    // `;
                     row.innerHTML = `
                     <td>
                       <label class="checkbox">
-                        <input type="checkbox" id=rentbike${lines.indexOf(line)} name="bike" value="${type.trim()}">
+                        <input type="checkbox" id="rentbike${lines.indexOf(line)}" name="bike" value="${type.trim()}">
                         <div class="checkbox-wrapper">
                         <div class="checkbox-bg"></div>
                         <svg fill="none" viewBox="0 0 24 24" class="checkbox-icon">
@@ -37,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
                     tbody.appendChild(row);
                     row.addEventListener('click', function(event) {
-                        event.preventDefault()
-                        var checkbox = doc(`rentbike${lines.indexOf(line)}`);
+                        event.preventDefault();
+                        var checkbox = document.getElementById(`rentbike${lines.indexOf(line)}`);
                         checkbox.checked = !row.classList.contains('checkbox-selected');
                         row.classList.toggle('checkbox-selected');
                     });
@@ -46,4 +41,16 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         })
         .catch(error => console.error('Error fetching bike rental data:', error));
+
+    document.getElementById('reserve-button').addEventListener('click', Rentbikes);
 });
+
+function Rentbikes(event) {
+    event.preventDefault();
+    const checkboxes = document.querySelectorAll('input[name="bike"]:checked');
+    if (checkboxes.length === 0) {
+        alert('Selecteer alstublieft minstens één fiets om te reserveren.');
+    } else {
+        window.location.href = 'rentpage.html';
+    }
+}
