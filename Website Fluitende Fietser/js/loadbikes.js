@@ -44,6 +44,9 @@ function CloseBikeInfo() {
     setTimeout(() => {
         doc("shop-container").style.display = 'grid';
         doc("bigger-bike-container").style.display = 'none';
+        const url = new URL(window.location);
+        url.searchParams.delete('bikename');
+        window.history.replaceState({}, '', url);
     }, 200);
 }
 
@@ -83,4 +86,15 @@ document.addEventListener("DOMContentLoaded", () => {
     doc("shopping-cart-container").style.left = '100%';
     LoadBikes();
     doc("close-bigger-bike").addEventListener('click', CloseBikeInfo);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const bikename = urlParams.get('bikename');
+    if (bikename) {
+        setTimeout(() => {
+            const bikeButton = [...doc("shop-container").getElementsByTagName('button')].find(button => button.textContent.includes(bikename));
+            if (bikeButton) {
+                bikeButton.click();
+            }
+        }, 500);
+    }
 });

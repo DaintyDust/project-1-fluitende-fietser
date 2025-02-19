@@ -12,6 +12,78 @@ function SearchBikes() {
     }
 }
 
+function UpdateSearchDropdown() {
+    const search = doc("search").value.toLowerCase();
+    doc("search-results").innerHTML = '';
+    fetch("assets/fietsen.txt")
+    .then((response) => response.text())
+    .then((text) => {
+        const bikes = text.split("\n");
+        for (const bike of bikes) {
+            const [number, bikename, drivetype, driveoffer, bikegender, biketype, bikebrand, isnew, bikecolor, bikeprice, bikecommentary] = bike.split(":");
+            
+            const newbike = addBike(bikename);
+            const isVisible = bikename.toLowerCase().includes(search);
+            if (!isVisible) {
+                newbike.remove();
+            }
+            newbike.addEventListener('click', () => {
+                window.location.href = `./bikes.html?bikename=${encodeURIComponent(bikename)}`;
+            });
+
+        }
+        UpdateSearchItemCount();
+    })
+    .catch((e) => console.error(e));
+}
+
+function addBike(bikename) {
+
+    const searchItem = document.createElement('div');
+    searchItem.classList.add("search-item");
+    const searchImg = document.createElement('img');
+    const formattedBikeName = bikename.split(' ').join('_');
+    searchImg.src = `images/fietsen/${formattedBikeName}.jpg`;
+
+    const searchInfo = document.createElement('div');
+    searchInfo.classList.add("shopping-cart-item-info", "flex");
+    const bikeTitle = document.createElement('h3');
+    bikeTitle.innerHTML = bikename;
+
+    searchInfo.appendChild(bikeTitle);
+
+    searchItem.appendChild(searchImg);
+    searchItem.appendChild(searchInfo);
+    
+    doc("search-results").appendChild(searchItem);
+    return searchItem;
+}
+
+function UpdateSearchItemCount() {
+    const itemCount = doc("search-results").children.length;
+    document.getElementsByClassName("search-container")[0].style.setProperty('--search-item-count', itemCount);
+}
+
+function OnSearchFocus(event) {
+    const searchResults = doc("search-results");
+    if (event.type === 'focus') {
+        UpdateSearchDropdown()
+        searchResults.classList.remove('hidden');
+    } else if (event.type === 'focusout') {
+        document.getElementsByClassName("search-container")[0].style.setProperty('--delay-transition', "0.4s");
+        searchResults.classList.add("close-search-results");
+        setTimeout(() => {
+            searchResults.classList.add('hidden');
+            searchResults.classList.remove("close-search-results");
+            doc("search-results").innerHTML = '';
+            UpdateSearchItemCount()
+            setTimeout(() => {
+                document.getElementsByClassName("search-container")[0].style.setProperty('--delay-transition', "0s");
+            }, 50);
+        }, 400);
+    }
+}
+
 function DriveAnimation(element) {
     let position = 0;
     let direction = 1;
@@ -165,7 +237,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         doc("search").addEventListener('input', SearchBikes);
     }
-    
+    doc("search").addEventListener('focus', OnSearchFocus);
+    doc("search").addEventListener('focusout', OnSearchFocus);
+    // LoadSearchItems();
+    doc("search").addEventListener('input', UpdateSearchDropdown);
+
+
     DriveAnimation(doc("driving-bike"));
 });
 
