@@ -13,6 +13,16 @@ function LoadBikes() {
                 OpenBikeInfo(bikename, bikebrand, bikeprice, biketype, bikecolor, bikegender, driveoffer, isnew, null, bikecommentary);
             });
         }
+        const urlParams = new URLSearchParams(window.location.search);
+        const bikename = urlParams.get('bikename');
+        if (bikename) {
+            setTimeout(() => {
+                const bikeButton = [...doc("shop-container").getElementsByTagName('button')].find(button => button.textContent.includes(bikename));
+                if (bikeButton) {
+                    bikeButton.click();
+                }
+            }, 500);
+        }
     })
     .catch((e) => console.error(e));
 }
@@ -86,15 +96,4 @@ document.addEventListener("DOMContentLoaded", () => {
     doc("shopping-cart-container").style.left = '100%';
     LoadBikes();
     doc("close-bigger-bike").addEventListener('click', CloseBikeInfo);
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const bikename = urlParams.get('bikename');
-    if (bikename) {
-        setTimeout(() => {
-            const bikeButton = [...doc("shop-container").getElementsByTagName('button')].find(button => button.textContent.includes(bikename));
-            if (bikeButton) {
-                bikeButton.click();
-            }
-        }, 500);
-    }
 });
