@@ -14,6 +14,9 @@ function SearchBikes() {
 
 function UpdateSearchDropdown() {
     const search = doc("search").value.toLowerCase();
+    if (!doc("search-results")) {
+        return;
+    }
     doc("search-results").innerHTML = '';
     fetch("assets/fietsen.txt")
     .then((response) => response.text())
@@ -66,6 +69,9 @@ function UpdateSearchItemCount() {
 
 function OnSearchFocus(event) {
     const searchResults = doc("search-results");
+    if (!searchResults) {
+        return;
+    }
     if (event.type === 'focus') {
         UpdateSearchDropdown()
         searchResults.classList.remove('hidden');
