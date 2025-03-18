@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title='Fietsverhuur "De Fluitende Fietser" - Facturering' Height="450" Width="800">
     <Grid>
+        <StackPanel>
+            <ComboBox Width="150" Height="50">
 
+        </ComboBox>
+        <ComboBox Width="150" Height="50">
+
+        </ComboBox>
+        <ComboBox Width="150" Height="50">
+
+        </ComboBox>
+        </StackPanel>
     </Grid>
 </Window>

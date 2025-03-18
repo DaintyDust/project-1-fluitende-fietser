@@ -1,0 +1,33 @@
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\WPF.exe
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\10 euro.png
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\100 euro.jpg
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\10eurocent.png
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\1Euro.png
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\2 euro.png
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\20 euro.jpg
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\200 euro.jpg
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\20eurocent.png
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\5 euro.png
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\50 euro.png
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\50eurocent.png
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\5eurocent.png
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\WPF.deps.json
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\WPF.runtimeconfig.json
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\WPF.dll
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\WPF.pdb
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF_MarkupCompile.cache
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF_MarkupCompile.lref
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.g.resources
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.AssemblyInfoInputs.cache
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.AssemblyInfo.cs
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.csproj.CoreCompileInputs.cache
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.sourcelink.json
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.dll
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\refint\WPF.dll
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.pdb
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.genruntimeconfig.cache
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\ref\WPF.dll
