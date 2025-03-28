@@ -4,19 +4,234 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF"
+        xmlns:controls="clr-namespace:WPF.UserControls"
+        xmlns:Converters="clr-namespace:WPF.Converters"
         mc:Ignorable="d"
         Title='Fietsverhuur "De Fluitende Fietser" - Facturering' Height="450" Width="800">
+    <Window.Resources>
+        <Converters:NumericValuesConverter x:Key="NumValuesConverter"/>
+    </Window.Resources>
     <Grid>
-        <StackPanel>
-            <ComboBox Width="150" Height="50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.RowSpan="2" Margin="0,0,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/200euro.jpg" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro200" AddValue="200.0" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/100euro.jpg" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro100" AddValue="100.0" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/50euro.png" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro50" AddValue="50.0" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/20euro.jpg" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro20" AddValue="20.0" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/10euro.png" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro10" AddValue="10.0" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/5euro.png" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro5" AddValue="5.0" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/2euro.png" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro2" AddValue="2.0" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/1Euro.png" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro1" AddValue="1.0" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/50eurocent.png" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro50cent" AddValue="0.5" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/20eurocent.png" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro20cent" AddValue="0.2" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/10eurocent.png" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro10cent" AddValue="0.1" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/5eurocent.png" Width="auto" Margin="15,0,0,0"></Image>
+                <controls:NumericUpDown Grid.Column="2" x:Name="euro5cent" AddValue="0.05" Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </Grid>
+            <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Background="LightGray" Orientation="Horizontal" Width="392" HorizontalAlignment="Left">
+                <Label>Totaal gegeven €</Label>
+                <Label Padding="0,5,5,5">
+                    <Label.Content>
+                        <MultiBinding Converter="{StaticResource NumValuesConverter}">
+                            <Binding Path="TotalValue" ElementName="euro200" />
+                            <Binding Path="TotalValue" ElementName="euro100" />
+                            <Binding Path="TotalValue" ElementName="euro50" />
+                            <Binding Path="TotalValue" ElementName="euro20" />
+                            <Binding Path="TotalValue" ElementName="euro10" />
+                            <Binding Path="TotalValue" ElementName="euro5" />
+                            <Binding Path="TotalValue" ElementName="euro2" />
+                            <Binding Path="TotalValue" ElementName="euro1" />
+                            <Binding Path="TotalValue" ElementName="euro50cent" />
+                            <Binding Path="TotalValue" ElementName="euro20cent" />
+                            <Binding Path="TotalValue" ElementName="euro10cent" />
+                            <Binding Path="TotalValue" ElementName="euro5cent" />
+                        </MultiBinding>
+                    </Label.Content>
+                </Label>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Background="LightGray" Orientation="Horizontal" Width="392" HorizontalAlignment="Left">
+                <Label>Totaal terug €</Label>
+                <Label Padding="0,5,5,5">
+                    <Label.Content>
+                        <MultiBinding Converter="{StaticResource NumValuesConverter}">
+                            
+                        </MultiBinding>
+                    </Label.Content>
+                </Label>
+            </StackPanel>
+            <Grid Grid.Row="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.ColumnSpan="4" FontWeight="Bold">Retour</Label>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
 
-        </ComboBox>
-        <ComboBox Width="150" Height="50">
-
-        </ComboBox>
-        <ComboBox Width="150" Height="50">
-
-        </ComboBox>
+                </Grid>
+            </Grid>
+        </Grid>
+        <StackPanel Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Label FontSize="28">Order</Label>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="FietsenCombobox" Width="150" Height="50" VerticalContentAlignment="Center"></ComboBox>
+                <controls:NumericUpDown Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="VerzekeringComboBox" Width="150" Height="50" VerticalContentAlignment="Center"></ComboBox>
+                <controls:NumericUpDown Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="ServicesComboBox" Width="150" Height="50" VerticalContentAlignment="Center"></ComboBox>
+                <controls:NumericUpDown Width="42" Background="White" MaxValue="50"></controls:NumericUpDown>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button Width="150" Click="OrderButton_Click">Bestel</Button>
+                <Button Margin="10,0,0,0">Annuleren</Button>
+            </StackPanel>
+            <Label FontSize="16">Totaalprijs bestelling = € 0,00</Label>
         </StackPanel>
+        <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.ColumnSpan="2" Margin="0,0,0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.ColumnSpan="2" FontSize="20" FontWeight="Bold">Orders</Label>
+                <ListBox x:Name="OrdersListBox" Grid.Row="1" Grid.ColumnSpan="2" Height="65" BorderBrush="LightGray" BorderThickness="5,10,5,5"></ListBox>
+            </Grid>
+
+             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Width="100" Height="50">Calculator</Button>
+                <Button Height="50" Width="100">Timer</Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

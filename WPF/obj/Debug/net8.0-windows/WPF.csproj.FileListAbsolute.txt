@@ -1,16 +1,4 @@
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\WPF.exe
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\10 euro.png
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\100 euro.jpg
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\10eurocent.png
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\1Euro.png
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\2 euro.png
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\20 euro.jpg
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\200 euro.jpg
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\20eurocent.png
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\5 euro.png
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\50 euro.png
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\50eurocent.png
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\5eurocent.png
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\WPF.deps.json
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\WPF.runtimeconfig.json
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\WPF.dll
@@ -31,3 +19,7 @@ C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.pdb
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.genruntimeconfig.cache
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\ref\WPF.dll
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\UserControls\NumericUpDown.g.cs
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\prijzen_fietsen_verzekeringen_services.csv
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\UserControls\NumericUpDown.baml

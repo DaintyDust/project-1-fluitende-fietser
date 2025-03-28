@@ -9,40 +9,54 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="Assets\10 euro.png">
+    <None Remove="Assets\10eurocent.png" />
+    <None Remove="Assets\1Euro.png" />
+    <None Remove="Assets\20eurocent.png" />
+    <None Remove="Assets\50eurocent.png" />
+    <None Remove="Assets\5eurocent.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\10euro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\100 euro.jpg">
+    </Resource>
+    <Resource Include="Assets\100euro.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\10eurocent.png">
+    </Resource>
+    <Resource Include="Assets\10eurocent.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\1Euro.png">
+    </Resource>
+    <Resource Include="Assets\1Euro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\2 euro.png">
+    </Resource>
+    <Resource Include="Assets\2euro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\20 euro.jpg">
+    </Resource>
+    <Resource Include="Assets\20euro.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\200 euro.jpg">
+    </Resource>
+    <Resource Include="Assets\200euro.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\20eurocent.png">
+    </Resource>
+    <Resource Include="Assets\20eurocent.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\5 euro.png">
+    </Resource>
+    <Resource Include="Assets\5euro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\50 euro.png">
+    </Resource>
+    <Resource Include="Assets\50euro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\50eurocent.png">
+    </Resource>
+    <Resource Include="Assets\50eurocent.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\5eurocent.png">
+    </Resource>
+    <Resource Include="Assets\5eurocent.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\prijzen_fietsen_verzekeringen_services.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
