@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nick-\\OneDrive - Summacollege O365\\Leerlaar 1\\Github Projecten\\project-1-fluitende-fietser\\WPF\\WPF.csproj": {}
+    "C:\\Users\\niels\\Documents\\GitHub\\project-1-fluitende-fietser\\WPF\\WPF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nick-\\OneDrive - Summacollege O365\\Leerlaar 1\\Github Projecten\\project-1-fluitende-fietser\\WPF\\WPF.csproj": {
+    "C:\\Users\\niels\\Documents\\GitHub\\project-1-fluitende-fietser\\WPF\\WPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nick-\\OneDrive - Summacollege O365\\Leerlaar 1\\Github Projecten\\project-1-fluitende-fietser\\WPF\\WPF.csproj",
+        "projectUniqueName": "C:\\Users\\niels\\Documents\\GitHub\\project-1-fluitende-fietser\\WPF\\WPF.csproj",
         "projectName": "WPF",
-        "projectPath": "C:\\Users\\nick-\\OneDrive - Summacollege O365\\Leerlaar 1\\Github Projecten\\project-1-fluitende-fietser\\WPF\\WPF.csproj",
-        "packagesPath": "C:\\Users\\nick-\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nick-\\OneDrive - Summacollege O365\\Leerlaar 1\\Github Projecten\\project-1-fluitende-fietser\\WPF\\obj\\",
+        "projectPath": "C:\\Users\\niels\\Documents\\GitHub\\project-1-fluitende-fietser\\WPF\\WPF.csproj",
+        "packagesPath": "C:\\Users\\niels\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\niels\\Documents\\GitHub\\project-1-fluitende-fietser\\WPF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\nick-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\niels\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {}
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
@@ -68,7 +69,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
