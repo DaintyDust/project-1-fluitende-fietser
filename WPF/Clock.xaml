@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPF.Clock"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="Clock" Height="250" Width="400">
+    <Grid>
+        <StackPanel>
+            <TextBlock x:Name="ClockTextBlock" FontSize="24" HorizontalAlignment="Center" Margin="20"/>
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+                <TextBox x:Name="HoursTextBox" Width="50" IsEnabled="False" />
+                <TextBlock Text=":" VerticalAlignment="Center" />
+                <TextBox x:Name="MinutesTextBox" Width="50" IsEnabled="False" />
+                <TextBlock Text=":" VerticalAlignment="Center" />
+                <TextBox x:Name="SecondsTextBox" Width="50" IsEnabled="False" />
+            </StackPanel>
+            <Button x:Name="SetTimeButton" Content="Set Time" Click="SetTimeButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

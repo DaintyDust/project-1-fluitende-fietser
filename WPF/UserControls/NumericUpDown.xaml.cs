@@ -33,17 +33,14 @@ namespace WPF.UserControls
             txtNum.Text = _numValue.ToString();
         }
 
-        // Dependency Property for NumValue
         public static readonly DependencyProperty NumValueProperty =
             DependencyProperty.Register("NumValue", typeof(int), typeof(NumericUpDown),
                 new PropertyMetadata(0, OnNumValueChanged));
 
-        // Dependency Property for MaxValue
         public static readonly DependencyProperty MaxValueProperty =
             DependencyProperty.Register("MaxValue", typeof(int), typeof(NumericUpDown),
                 new PropertyMetadata(int.MaxValue, OnMaxValueChanged));
 
-        // Dependency Property for MinValue
         public static readonly DependencyProperty MinValueProperty =
             DependencyProperty.Register("MinValue", typeof(int), typeof(NumericUpDown),
                 new PropertyMetadata(0, OnMinValueChanged));
@@ -56,7 +53,22 @@ namespace WPF.UserControls
             DependencyProperty.Register("TotalValue", typeof(double), typeof(NumericUpDown),
                 new PropertyMetadata(0.0, OnTotalValueChanged));
 
-        // Property wrappers
+        public static RoutedEvent ValueChangedEvent =
+         EventManager.RegisterRoutedEvent("ValueChanged", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(NumericUpDown));
+
+
+        public event RoutedEventHandler ValueChanged
+        {
+            add
+            {
+                AddHandler(ValueChangedEvent, value);
+            }
+            remove
+            {
+                RemoveHandler(ValueChangedEvent, value);
+            }
+        }
+
         public int NumValue
         {
             get { return (int)GetValue(NumValueProperty); }
@@ -85,7 +97,6 @@ namespace WPF.UserControls
             set { SetValue(TotalValueProperty, value); }
         }
 
-        // Property changed handlers
         private static void OnNumValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (d is NumericUpDown control)
@@ -126,8 +137,6 @@ namespace WPF.UserControls
                 control._totalValue = (double)e.NewValue;
             }
         }
-
-        // Update and validate the numeric value
         private void UpdateNumValue(int value)
         {
             _numValue = value;
@@ -136,9 +145,8 @@ namespace WPF.UserControls
             ValidateValue();
             txtNum.Text = _numValue.ToString();
             AdjustTextBoxWidth();
+            RaiseEvent(new RoutedEventArgs(ValueChangedEvent));
         }
-
-        // Ensure the value stays within min and max bounds
         private void ValidateValue()
         {
             if (_numValue > _maxValue)
@@ -182,11 +190,9 @@ namespace WPF.UserControls
 
             if (int.TryParse(txtNum.Text, out int parsedValue))
             {
-                // Only update the backing field, not the property to avoid loops
                 _numValue = parsedValue;
                 ValidateValue();
 
-                // If validation changed the value, update the text
                 if (_numValue.ToString() != txtNum.Text)
                 {
                     txtNum.Text = _numValue.ToString();
