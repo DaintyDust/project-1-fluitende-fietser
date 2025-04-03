@@ -7,7 +7,6 @@ C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF_MarkupCompile.cache
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF_MarkupCompile.lref
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.g.resources
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\WPF.AssemblyInfoInputs.cache
@@ -22,7 +21,6 @@ C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\UserControls\NumericUpDown.g.cs
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\bin\Debug\net8.0-windows\Assets\prijzen_fietsen_verzekeringen_services.csv
-C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\UserControls\NumericUpDown.baml
 C:\Users\nick-\Downloads\WPF\WPF\bin\Debug\net8.0-windows\WPF.exe
 C:\Users\nick-\Downloads\WPF\WPF\bin\Debug\net8.0-windows\Assets\prijzen_fietsen_verzekeringen_services.csv
 C:\Users\nick-\Downloads\WPF\WPF\bin\Debug\net8.0-windows\WPF.deps.json
@@ -53,3 +51,5 @@ C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\Calculator.baml
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\Clock.g.cs
 C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\Clock.baml
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\nick-\OneDrive - Summacollege O365\Leerlaar 1\Github Projecten\project-1-fluitende-fietser\WPF\obj\Debug\net8.0-windows\UserControls\NumericUpDown.baml

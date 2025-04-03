@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -29,6 +30,36 @@ namespace WPF
 
         private void SetTimeButton_Click(object sender, RoutedEventArgs e)
         {
+            if (HoursTextBox.IsEnabled && string.IsNullOrEmpty(HoursTextBox.Text.ToString()))
+            {
+                MessageBox.Show("Please enter a valid hour", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else if (MinutesTextBox.IsEnabled && string.IsNullOrEmpty(MinutesTextBox.Text.ToString()))
+            {
+                MessageBox.Show("Please enter a valid minute", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else if (SecondsTextBox.IsEnabled && string.IsNullOrEmpty(SecondsTextBox.Text.ToString()))
+            {
+                MessageBox.Show("Please enter a valid second", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (HoursTextBox.IsEnabled && Convert.ToInt32(HoursTextBox.Text.ToString()) > 23 )
+            {
+                MessageBox.Show("Hours are not in a valid time range", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            } else if (MinutesTextBox.IsEnabled && Convert.ToInt32(MinutesTextBox.Text.ToString()) > 59)
+            { 
+                MessageBox.Show("Minutes are not in a valid time range", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            } else if (SecondsTextBox.IsEnabled && Convert.ToInt32(SecondsTextBox.Text.ToString()) > 59)
+            {
+                MessageBox.Show("Seconds are not in a valid time range", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+
+            }
+
             if (SetTimeButton.Content.ToString() == "Set Time")
             {
                 HoursTextBox.IsEnabled = true;
@@ -70,6 +101,11 @@ namespace WPF
             currentTime = currentTime.AddSeconds(1);
             DataContext = currentTime;
             ClockTextBlock.Text = currentTime.ToString("HH:mm:ss");
+        }
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

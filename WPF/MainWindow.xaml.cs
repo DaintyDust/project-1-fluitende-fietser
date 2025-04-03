@@ -307,6 +307,7 @@ namespace WPF
         private void Open_Calculator(object sender, RoutedEventArgs e)
         {
             Calculator calculator = new Calculator();
+            calculator.AddHandler(UIElement.MouseDownEvent, new RoutedEventHandler(ResetTimer), true);
             calculator.Show();
         }
 
@@ -324,6 +325,7 @@ namespace WPF
         private void Open_Timer(object sender, RoutedEventArgs e)
         {
            Clock clock = new Clock();
+           clock.AddHandler(UIElement.MouseDownEvent, new RoutedEventHandler(ResetTimer), true);
            clock.Show();
         }
 

@@ -10,11 +10,11 @@
         <StackPanel>
             <TextBlock x:Name="ClockTextBlock" FontSize="24" HorizontalAlignment="Center" Margin="20"/>
             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                <TextBox x:Name="HoursTextBox" Width="50" IsEnabled="False" />
+                <TextBox x:Name="HoursTextBox" PreviewTextInput="NumberValidationTextBox" Width="50" IsEnabled="False" />
                 <TextBlock Text=":" VerticalAlignment="Center" />
-                <TextBox x:Name="MinutesTextBox" Width="50" IsEnabled="False" />
+                <TextBox x:Name="MinutesTextBox" PreviewTextInput="NumberValidationTextBox" Width="50" IsEnabled="False" />
                 <TextBlock Text=":" VerticalAlignment="Center" />
-                <TextBox x:Name="SecondsTextBox" Width="50" IsEnabled="False" />
+                <TextBox x:Name="SecondsTextBox" PreviewTextInput="NumberValidationTextBox" Width="50" IsEnabled="False" />
             </StackPanel>
             <Button x:Name="SetTimeButton" Content="Set Time" Click="SetTimeButton_Click" />
         </StackPanel>
