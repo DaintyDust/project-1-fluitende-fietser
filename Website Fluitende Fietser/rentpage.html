@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/rentpage.css">
     <script src="https://kit.fontawesome.com/79433d6630.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
     <link rel="icon" type="image/x-icon" href="images/FluitendeFietserLogo-Transparant.png">
     <script src="js/main.js"></script>
+    <script src="js/rentpage.js" defer ></script>
     <title>Fluitende Fietser</title>
 </head>
 
@@ -22,7 +24,7 @@
                 <button id="search-btn" class="icon" data-icon=""></button>
                 <div id="search-results" class="hidden"></div>
             </div>
-            <button id="open-shopping-cart" class="icon" data-icon="" item-count="0" show-item-count="true" onclick="ToggleShoppingCart()"></button>
+            <button id="open-shopping-cart" class="icon" data-icon="" item-count="10" show-item-count="true" onclick="ToggleShoppingCart()"></button>
         </header>
         <nav id="nav-menu">
             <ul>
@@ -42,6 +44,33 @@
                     </div>
                 </div>
             </div>
+<form class="form">
+        <div class="flex">
+        <label>
+            <input class="input" type="text" placeholder="" required="">
+            <span>Firstname</span>
+        </label>
+
+        <label>
+            <input class="input" type="text" placeholder="" required="">
+            <span>Lastname</span>
+        </label>
+    </div>  
+    <label>
+        <input class="input" type="email" placeholder="" required="">
+        <span>Email</span>
+    </label> 
+        
+    <label>
+        <input class="input" type="stad" placeholder="" required="">
+        <span>Stad</span>
+    </label>
+    <label>
+        <input class="input" type="Postcode" placeholder="" required="">
+        <span>Postcode</span>
+    </label>
+    <button class="submit">gegevens versturen</button>
+</form>
             <footer id="footer">
                 <div id="footer-links">
                     <div class="column">
@@ -49,6 +78,7 @@
                         <a id="contact_info-link" class="footer-link" href="contact.html">Contact info</a>
                     </div>
                     <a id="facebook-social" href="https://www.facebook.com/fietsmagazine"></a>
+                    <a id="winactie" class="footer-link" href="bikebank.html">Winactie!</a>
                     <div class="column">
                         <a id="mailto-link" class="footer-link" href= "mailto:info@fluitendefietser.nl">info@fluitendefietser.nl</a>
                         <a id="terms_and_conditions-link" class="footer-link" href="terms-and-conditions.html">Algemene Voorwaarden</a>

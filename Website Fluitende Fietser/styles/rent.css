@@ -1,12 +1,25 @@
 #content-container {
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* Zorgt ervoor dat de items naast elkaar staan */
+    flex-direction: row; /* Horizontale uitlijning */
+    align-items: center; /* Lijn de items verticaal uit */
+    justify-content: center; /* Centreer de items horizontaal */
+    gap: 20px; /* Ruimte tussen de items */
 }
 
+.bike-rental-image {
+    max-width: 500px;
+    flex-shrink: 0; 
+}
+
+.bike-rental-image img {
+    width: 400px; 
+    height: 400px; 
+    border-radius: 10px; 
+    
+}
 #bike-rental-form {
+    flex: 1;
     height: 100%;
     width: 50vw;
     display: flex;

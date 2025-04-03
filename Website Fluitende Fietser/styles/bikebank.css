@@ -1,0 +1,74 @@
+#bikebank-action {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 30px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px; 
+    overflow: hidden;
+}
+
+#bikebank-action h1 {
+    color: #00bfff;
+    font-size: 28px; 
+    margin-bottom: 20px;
+}
+
+#bikebank-action p {
+    font-size: 18px; 
+    margin-bottom: 15px;
+    line-height: 1.6; 
+}
+
+#bikebank-action ul {
+    list-style-type: disc;
+    margin: 15px 0;
+    padding-left: 40px;
+    text-align: left;
+    font-size: 18px; 
+}
+
+#participate-button {
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    padding: 15px 30px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#participate-button:hover {
+    background-color: #0099cc;
+}
+
+#bike-donation-form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 16px; 
+}
+
+#bike-donation-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; 
+}
+
+#bike-donation-form button {
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    padding: 15px 30px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; 
+}
+
+#bike-donation-form button:hover {
+    background-color: #0099cc;
+}

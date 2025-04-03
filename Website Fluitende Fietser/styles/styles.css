@@ -365,6 +365,7 @@ html, body {
         text-decoration: underline;
     }
 }
+
 .column {
     display: flex;
     flex-direction: column;
