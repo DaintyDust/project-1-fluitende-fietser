@@ -111,46 +111,82 @@ function LoadOpenTimes() {
     .catch((e) => console.error(e));
 }
 
-function CreateBikeSlide() { 
+function CreateBikeSlide() {
+    const images = ["sfeer2.jpg", "sfeer3.jpg", "verhuur1.jpg", "winkel1.jpg", "winkel2.jpg"];
+    let currentindex = 0;
 
-    fetch('images/homepage_sycle/')
-    .then(response => response.text())
-    .then(html => {
-        const parser = new DOMParser();
-        const links = parser.parseFromString(html, 'text/html').querySelectorAll('a');
-        let currentindex = 0;
-        links.forEach((link) => {
-            const href = link.getAttribute('href');
-            if (href.endsWith('.jpg') || href.endsWith('.png') || href.endsWith('.gif')) { 
-                const sliding_image_item = document.createElement('div');
-                sliding_image_item.classList.add("sliding-image-item");
-                sliding_image_item.setAttribute("data-number",currentindex);
-                const sliding_image = document.createElement('img');
-                sliding_image.classList.add("sliding-image");
-                sliding_image.src = href;
-                sliding_image_item.appendChild(sliding_image);
-                doc("sliding-images-items").appendChild(sliding_image_item);
-                
-                const page_number = document.createElement('div');
-                page_number.setAttribute("data-current","false");
-                doc("sliding-page-number").appendChild(page_number);
+    images.forEach((filename) => {
+        const href = `images/homepage_sycle/${filename}`;
 
-                page_number.addEventListener('click', () => {
-                    slideIndex = sliding_image_item.getAttribute("data-number");
-                    console.log(slideIndex);
-                    showSlide(slideIndex);
-                });
-                currentindex++;         
-            }
+        const sliding_image_item = document.createElement('div');
+        sliding_image_item.classList.add("sliding-image-item");
+        sliding_image_item.setAttribute("data-number", currentindex);
+
+        const sliding_image = document.createElement('img');
+        sliding_image.classList.add("sliding-image");
+        sliding_image.src = href;
+        sliding_image_item.appendChild(sliding_image);
+
+        doc("sliding-images-items").appendChild(sliding_image_item);
+
+        const page_number = document.createElement('div');
+        page_number.setAttribute("data-current", "false");
+        doc("sliding-page-number").appendChild(page_number);
+
+        page_number.addEventListener('click', () => {
+            slideIndex = sliding_image_item.getAttribute("data-number");
+            showSlide(slideIndex);
         });
-            slides = document.querySelectorAll(".sliding-image-item")
-            slidebuttons = document.querySelectorAll("#sliding-page-number div");
-            // console.log(slides);
-            // console.log(slidebuttons);
-            initializeSlider();
-    })
-    .catch(error => console.error('Error fetching directory listing:', error));
+
+        currentindex++;
+    });
+
+    slides = document.querySelectorAll(".sliding-image-item");
+    slidebuttons = document.querySelectorAll("#sliding-page-number div");
+
+    initializeSlider();
 }
+
+// function CreateBikeSlide() { 
+//     const images = ["sfeer2.jpg", "sfeer3.jpg", "verhuur1.jpg", "winkel1.jpg", "winkel2.jpg"];
+//     fetch('images/homepage_sycle/')
+//     .then(response => response.text())
+//     .then(html => {
+//         const parser = new DOMParser();
+//         const links = parser.parseFromString(html, 'text/html').querySelectorAll('a');
+//         let currentindex = 0;
+//         links.forEach((link) => {
+//             const href = link.getAttribute('href');
+//             if (href.endsWith('.jpg') || href.endsWith('.png') || href.endsWith('.gif')) { 
+//                 const sliding_image_item = document.createElement('div');
+//                 sliding_image_item.classList.add("sliding-image-item");
+//                 sliding_image_item.setAttribute("data-number",currentindex);
+//                 const sliding_image = document.createElement('img');
+//                 sliding_image.classList.add("sliding-image");
+//                 sliding_image.src = href;
+//                 sliding_image_item.appendChild(sliding_image);
+//                 doc("sliding-images-items").appendChild(sliding_image_item);
+                
+//                 const page_number = document.createElement('div');
+//                 page_number.setAttribute("data-current","false");
+//                 doc("sliding-page-number").appendChild(page_number);
+
+//                 page_number.addEventListener('click', () => {
+//                     slideIndex = sliding_image_item.getAttribute("data-number");
+//                     console.log(slideIndex);
+//                     showSlide(slideIndex);
+//                 });
+//                 currentindex++;         
+//             }
+//         });
+//             slides = document.querySelectorAll(".sliding-image-item")
+//             slidebuttons = document.querySelectorAll("#sliding-page-number div");
+//             // console.log(slides);
+//             // console.log(slidebuttons);
+//             initializeSlider();
+//     })
+//     .catch(error => console.error('Error fetching directory listing:', error));
+// }
 
 function initializeSlider() {
     if(slides.length > 0) {
